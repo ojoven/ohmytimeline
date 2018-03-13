@@ -2,3 +2,44 @@
 // FRONT PAGE
 // ==============================================
 // Custom styles applied to the home page
+
+.cta {
+	width: 400px;
+	background: $white;
+	box-shadow: 0 4px 3px #ddd;
+	margin: 0 auto 0;
+	color: $black;
+	position: absolute;
+	top: -140px;
+	padding: 30px 40px;
+	left: 50%;
+	@include translateX(-50%);
+
+	.message {
+		font-size: 12px;
+	}
+
+	.follow {
+
+		margin-top: 10px;
+		margin-left: 71px;
+
+		img {
+			width: 40px;
+			float: left;
+			border-radius: 8px;
+			margin: 0 15px 0 12px;
+		}
+
+		.form-checkbox {
+			float: left;
+			position: relative;
+			top: 10px;
+		}
+		#follow-check {
+			+ label {
+				font-size: 14px;
+			}
+		}
+	}
+}

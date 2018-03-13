@@ -17,36 +17,6 @@ class IndexController extends AppController {
 		$this->_setUsernameFromSession();
 		$this->_setAuthenticated();
 
-		// DEFAULT INFLUENCERS
-		$influencers = $this->Influencer->find('all',array(
-			'conditions' => array(
-				'default' => true
-			)
-		));
-		//shuffle($influencers);
-		//$influencers = array_slice($influencers,0,self::NUM_MAX_INFLUENCERS);
-		$this->set('influencers',$influencers);
-
-	}
-
-	public function view() {
-
-		$viewInfluencer = $this->request->params['slug'];
-		$this->_setUsernameFromSession();
-		$this->_setAuthenticated();
-
-		// DEFAULT INFLUENCERS
-		$influencers = $this->Influencer->find('all',array(
-			'conditions' => array(
-				'default' => true
-			)
-		));
-		//shuffle($influencers);
-		//$influencers = array_slice($influencers,0,self::NUM_MAX_INFLUENCERS);
-		$this->set('influencers',$influencers);
-		$this->set('viewInfluencer',str_replace("@", "", $viewInfluencer));
-		$this->render('index');
-
 	}
 
 	private function _setUsernameFromSession() {
@@ -188,31 +158,5 @@ class IndexController extends AppController {
 	public function checklistusers() {
 		$this->TwitterList->checkListUsers();
 	}
-
-	/**
-	public function defaultinfluencers() {
-
-		$influencerScreenNames = "billgates,cristiano,oprah,aaronpaul_8,tomhanks,taylorswift13,jack,kevin,KingJames,SteveMartinToGo,justdemi,LeoDiCaprio,neymarjr";
-
-		$connection = $this->TwitterList->getConnection();
-		$influencers = $connection->get('users/lookup', array('screen_name' => $influencerScreenNames));
-
-		foreach ($influencers as $influencer) {
-			$this->Influencer->create();
-			$data = array();
-			$data['user_id'] = $influencer->id;
-			$data['screen_name'] = $influencer->screen_name;
-			$data['name'] = $influencer->name;
-			$data['image'] = $influencer->profile_image_url;
-			$data['friends_count'] = $influencer->friends_count;
-			$data['followers_count'] = $influencer->followers_count;
-			$data['json'] = json_encode((array)$influencer);
-			$data['default'] = true;
-			$this->Influencer->save($data);
-		}
-
-	}
-	**/
-
 
 }

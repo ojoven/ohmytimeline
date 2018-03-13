@@ -270,20 +270,6 @@ class Functions {
 		return $needle === "" || strpos($haystack, $needle) === 0;
 	}
 
-	/** FILES **/
-	public static function removeFilesFromDirOlderThanTimeInMinutes($dir,$timeInMinutes) {
-
-		$objects = scandir($dir);
-		foreach ($objects as $object) {
-			$object = $dir . $object;
-			if (filemtime($object) < time() - ($timeInMinutes*60)) {
-				if (!is_dir($object))
-					unlink($object);
-			}
-		}
-
-	}
-
 	/** IPS **/
 	public static function getRealIP() {
 		$ipaddress = '';

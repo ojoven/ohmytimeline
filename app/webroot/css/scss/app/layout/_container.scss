@@ -13,6 +13,13 @@ $containerMaxWidth: 1180px;
   text-align: center;
 }
 
+#main-container {
+  position: relative;
+  text-align: center;
+  background: $white;
+  min-height: 600px;
+}
+
 // ==============================================
 // CUSTOM MEDIA QUERIES
 // ==============================================

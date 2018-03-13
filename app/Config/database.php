@@ -86,10 +86,10 @@ class DATABASE_CONFIG {
 	public $development = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'xxxx',
-		'login' => 'xxxx',
-		'password' => 'xxxx',
-		'database' => 'xxxx',
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => '',
+		'database' => 'realtl_io',
 		'prefix' => '',
 		'encoding' => 'utf8'
 	);

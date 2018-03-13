@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<?php
-	$title = __("realtl.io | Bring back your Twitter TL");
-	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted.");
-	?>
+	<?php $title = __("realtl.io | Bring back your Twitter TL");
+	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted."); ?>
 	<title><?php echo $title; ?></title>
+
+	<!-- Le meta -->
 	<meta name="description" content="<?php echo $description; ?>">
 	<meta property="og:title" content="<?php echo $title; ?>"/>
 	<meta property="og:description" content="<?php echo $description; ?>" />
@@ -21,7 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css?v=<?php echo Functions::majestic_get_current_version('css'); ?>">
 
 	<!-- Le CDNs -->
-	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Le icons -->
 	<link rel="shortcut icon" href="<?php echo Router::url("/") ?>img/favicon.png">
@@ -33,59 +35,63 @@
 
 <body>
 
+<!-- GOOGLE ANALYTICS -->
 <?php echo $this->element('analytics_script'); ?>
 
-<?php if ($authenticated) {?>
-	<a href="<?php echo Router::url("/api/logout")?>" id="logout">
-		<img src="<?php echo Router::url("/img/logout.png"); ?>">
-		<span><?php echo __("Logout"); ?></span>
-	</a>
-<?php }?>
+<!-- HEADER -->
+<header id="main-header">
+	<h1>realtl.io</h1>
 
-<h1 id="logo">
-	<a href="<?php echo Router::url("/");?>">
-		<?php if (isset($viewInfluencer)) {
-			echo __("Who Influences<br><span class='influencername'>%s</span>?",array("@".$viewInfluencer));
-		} else {
-			echo __("Who Influences<br><span class='influencername'>the Influencers</span>?");
-		} ?>
-	</a>
-</h1>
+	<h2 class="main-description">Bring back your Twitter Timeline</h2>
 
-<h2 class="subtitle">
-	<?php if (isset($viewInfluencer)) {
-		echo __("Wanna feel what <span class='influencername'>%s</span> feels on Twitter?<span class='break-desktop'></span> <span class='highlight'>with whoinfluenc.es create a Twitter list of your own with the people he/she is following</span>.",array("@".$viewInfluencer));
-	} else {
-		echo __("Wanna feel what the influencers feel on their Twitter?<span class='break-desktop'></span> <span class='highlight'>with whoinfluenc.es create <a href='https://twitter.com/whoinfluences/lists/whoinfluences-billgates-2' target='blank'>a Twitter list</a> of your own with the people they're following</span>.");
-	} ?>
-</h2>
+	<ul class="main-features fa-ul">
+		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No ads</li>
+		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No faved tweets from people you follow</li>
+		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No "you may have missed" tweets</li>
+		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>Only your TL's tweets, sorted in real time</li>
+	</ul>
 
-<div class="container main-container">
+</header>
+
+<!-- MAIN CONTENT -->
+<main id="main-container">
+
+	<section class="cta">
+
+		<!-- FOLLOW -->
+		<div class="message">
+			This is a free service and an open source project.<br>
+			You can payback by following me on Twitter, where I post content about UX, products, MEMEs and more!
+		</div>
+
+		<div class="follow">
+			<img src="<?php echo Router::url("/") ?>img/twitter_sad.jpg">
+
+			<div class="form-checkbox">
+				<input id="follow-check" type="checkbox" />
+				<label for="follow-check">Follow me</label>
+			</div>
+		</div>
+
+		<!-- BUTTON -->
+		<a href="#" class="fancy-button bg-gradient4"><span>Bring back my Twitter TL!</span></a>
+
+	</section>
 
 	<?php echo $this->fetch('content'); ?>
+</main>
 
-</div> <!-- /container -->
-
+<!-- FOOTER -->
 <footer>
-	<span class="hide-mobile"><?php echo __("Made with love by <a target='_blank' href='http://twitter.com/ojoven'>@ojoven</a>, creator of DoWrapIt. Send YouTube videos, Spotify playlists, PDF ebooks as gifts at <a target='blank' href='http://dowrap.it'>http://dowrap.it</a>. Wanna try?"); ?></span>
-	<span class="hide-desktop"><?php echo __("Made with love by <a target='_blank' href='http://twitter.com/ojoven'>@ojoven</a>, creator of <a target='_blank' href='http://dowrap.it'>DoWrapIt</a>."); ?></span>
+	<span><?php echo __("Made with love by <a target='_blank' href='https://twitter.com/ojoven'>@ojoven</a>"); ?></span>
 </footer>
 
-<?php //echo $this->element('sql_dump');?>
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-
-<?php
-//echo $this->AssetCompress->script('common');
-?>
-<script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
-<script type="text/javascript" src="<?php echo Router::url("/js/functions.js"); ?>"></script>
-
+<!-- JS -->
 <script type="text/javascript">
 	urlBase = "<?php echo Router::url("/");?>";
 </script>
+
+<script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
 
 </body>
 </html>

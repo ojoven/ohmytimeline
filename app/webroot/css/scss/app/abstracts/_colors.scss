@@ -7,23 +7,25 @@
 // The method to create the name is: "Closest standard color" name + "Name that color" name (brown + dark ebony)
 
 // Example colors
-$greySilver: #cccccc;
+$greyGallery: #efefef;
 $blackTundora: #444;
 $creamFoam: #eaf7fd;
 $creamSatinLinen: #E1DECE;
+$dodgerBlue: #5797fe;
 
 // Basic colors
 $white: #ffffff;
-$black: #000;
+$black: #333;
 
 
 // NOW WE DEFINE FUNCTIONS
 
 // General functions
-$mainColor: $black;
+$mainColor: $dodgerBlue;
+$backgroundColor: $dodgerBlue;
 $blackLight: $blackTundora;
-$underlineColor: $greySilver;
-$greySeparator: $greySilver;
+$underlineColor: $greyGallery;
+$greySeparator: $greyGallery;
 
 // Gradients
 %exampleCreamGradient {

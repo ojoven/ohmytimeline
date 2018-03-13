@@ -54,13 +54,5 @@ class AppController extends Controller {
 
 	public function beforeFilter() {
 
-		if(APP_ENV==="development" && !$this->request->is('ajax')){
-			$cacheCss = APP . 'webroot/cache_css/';
-			Functions::removeFilesFromDirOlderThanTimeInMinutes($cacheCss,0);
-			$cacheJs = APP . 'webroot/cache_js/';
-			Functions::removeFilesFromDirOlderThanTimeInMinutes($cacheJs,0);
-			$result = exec(APP.'Console'.DS.'cake AssetCompress.AssetCompress build --force');
-		}
-
 	}
 }

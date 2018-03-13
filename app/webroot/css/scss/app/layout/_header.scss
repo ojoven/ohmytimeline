@@ -2,6 +2,37 @@
 // HEADER
 // ==============================================
 
+#main-header {
+
+	width: 100%;
+	text-align: center;
+	padding-bottom: 150px;
+
+	// Main title
+	h1 {
+		@extend .special;
+		margin-top: 50px;
+		font-size: 74px;
+	}
+
+	.main-description {
+		margin: 20px 0;
+		font-size: 32px;
+	}
+
+	.main-features {
+		width: 320px;
+		max-width: 90%;
+		margin: 30px auto;
+		text-align: left;
+
+		li {
+			margin-bottom: 10px;
+		}
+	}
+
+}
+
 // ==============================================
 // IPAD LANDSCAPE
 // ==============================================

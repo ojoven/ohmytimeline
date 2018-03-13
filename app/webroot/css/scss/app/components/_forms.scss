@@ -2,6 +2,36 @@
 // FORMS
 // ==============================================
 
+// PROGRESS
+#progress {
+	display: none;
+	max-width: 1024px;
+	margin: 30px auto;
+	height: 89px;
+}
+
+#progress-message {
+	display: block;
+	padding: 15px 0;
+	width: 300px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: $white;
+}
+
+// CUSTOM CHECKBOXES
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	margin-right: 10px;
+}
+
+input[type=checkbox] + label:before { content: "\f0c8"; } /* unchecked icon */
+//input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f14a"; } /* checked icon */
+//input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
 
 // ==============================================
 // MOBILE

@@ -11,33 +11,141 @@ $btnMainHoverBorder: #ccc;
 
 // GENERAL BUTTON
 .btn {
-  @extend .bold;
-  @include transition(all 0.5s ease);
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.2;
-  padding: 10px 25px 10px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
+	@extend .bold;
+	@include transition(all 0.5s ease);
+	display: inline-block;
+	font-size: 16px;
+	line-height: 1.2;
+	padding: 10px 25px 10px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
 
-  // MAIN BUTTON
-  &.btn-main {
-    color: $btnMainTextColor;
-    border: 3px solid $btnMainBorder;
+	// MAIN BUTTON
+	&.btn-main {
+		color: $btnMainTextColor;
+		border: 3px solid $btnMainBorder;
 
-    &:hover, &:focus {
-      border-color: $btnMainHoverBorder;
-    }
-  }
+		&:hover, &:focus {
+			border-color: $btnMainHoverBorder;
+		}
+	}
 
-  // ALTERNATE BUTTON
-  &.btn-alternate {
-    // Use if alternate button
-  }
+	// ALTERNATE BUTTON
+	&.btn-alternate {
+		// Use if alternate button
+	}
 
 }
 
+// FANCY BUTTONS
+.bg-gradient1 span,
+.bg-gradient1:before {
+	@include gradientBg(#52A0FD, #00e2fa);
+}
+
+.bg-gradient2 span,
+.bg-gradient2:before {
+	@include gradientBg(#44ea76, #39fad7);
+}
+
+.bg-gradient3 span,
+.bg-gradient3:before {
+	@include gradientBg(#fa6c9f, #ffe140);
+}
+
+.bg-gradient4 span,
+.bg-gradient4:before {
+	@include gradientBg($mainColor, darken($mainColor, 20%));
+}
+
+.fancy-button {
+	@extend .special;
+	display: inline-block;
+	margin: 30px;
+	font-size: 30px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #ffffff;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 40px;
+		position: absolute;
+		bottom: -5px;
+		left: 30px;
+		right: 30px;
+		z-index: -1;
+		filter: blur(20px) brightness(0.95);
+		transform-style: preserve-3d;
+		transition: all 0.3s ease-out;
+	}
+	i {
+		margin-top: -1px;
+		margin-right: 20px;
+		font-size: 1.265em;
+		vertical-align: middle;
+	}
+	span {
+		display: inline-block;
+		padding: 10px 30px;
+		position: relative;
+		z-index: 2;
+		line-height: 0.8;
+		will-change: transform, filter;
+		transform-style: preserve-3d;
+		transition: all 0.3s ease-out;
+	}
+	&:focus,
+	&:active {
+		color: #ffffff;
+	}
+	&:hover {
+		color: #ffffff;
+
+		span {
+			filter: brightness(1.05) contrast(1.05);
+			transform: scale(0.95);
+		}
+		&:before {
+			bottom: 0;
+			filter: blur(10px) brightness(0.95);
+		}
+	}
+	&.pop-onhover {
+
+		&:before {
+			opacity: 0;
+			bottom: 10px;
+		}
+		&:hover {
+
+			&:before {
+				bottom: -7px;
+				opacity: 1;
+				filter: blur(20px);
+			}
+			span {
+				transform: scale(1.04);
+			}
+			&:active {
+
+				span {
+					filter: brightness(1) contrast(1);
+					transform: scale(1);
+					transition: all 0.15s ease-out;
+				}
+				&:before {
+					bottom: 0;
+					filter: blur(10px) brightness(0.95);
+					transition: all 0.2s ease-out;
+				}
+			}
+		}
+	}
+}
 
 // ==============================================
 // MOBILE

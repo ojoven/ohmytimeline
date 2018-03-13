@@ -112,9 +112,9 @@ CakeLog::config('error', array(
 /** Let's set the APP_ENV **/
 if (isset($_SERVER['SERVER_NAME'])) {
 	switch($_SERVER['SERVER_NAME']) {
-		case 'whoinfluences.local.host':
+		case 'realtl_io.local.host':
 			$appEnv = "development"; break;
-		case 'theinfluencer.ojoven.es':
+		case 'realtl_io.ojoven.es':
 			$appEnv = "staging"; break;
 		default:
 			$appEnv = "production"; break;
@@ -129,22 +129,3 @@ define('APP_ENV',$appEnv);
  * App settings
 */
 require_once(dirname(__FILE__) . '/settings.php');
-
-/**
- * LESS
-*/
-
-require_once(APP . '/Vendor/scss.inc.php');
-
-try {
-	$scssFile = APP . 'webroot/css/scss/styles.scss';
-	$cssFile = APP . 'webroot/css/styles.css';
-	$scss = new scssc();
-	$scss->setFormatter("scss_formatter");
-	$scss->setImportPaths(APP . 'webroot/css/scss/partials/');
-	$data = file_get_contents($scssFile);
-	$css = $scss->compile($data);
-	file_put_contents($cssFile, $css);
-} catch (exception $e) {
-	echo "fatal error: " . $e->getMessage();
-}

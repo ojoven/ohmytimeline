@@ -3,7 +3,8 @@
 // ==============================================
 
 // Vars
-$bodyBg: #fefefe;
+$bodyBg: $mainColor;
+$fontColor: $white;
 
 html, body {
   height: 100%;
@@ -11,7 +12,9 @@ html, body {
 
 body {
   @extend .regular;
-  background: $bodyBg;
+  //background: $bodyBg;
+  @include gradientBg($mainColor, lighten($mainColor, 10%));
+  color: $fontColor;
 }
 
 p {
@@ -38,6 +41,10 @@ sup, sub {
 
 sub {
   top: 0.4em;
+}
+
+a {
+  color: $fontColor;
 }
 
 // ==============================================

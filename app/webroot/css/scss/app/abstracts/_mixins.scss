@@ -21,6 +21,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2}, GradientType=0); /* IE6-9 */
 }
 
+@mixin gradientBg($startColor, $endColor) {
+  background: $startColor;
+  background: -moz-linear-gradient(left,  $startColor 0%, $endColor 80%,$endColor 100%);
+  background: -webkit-linear-gradient(left,  $startColor 0%, $endColor 80%,$endColor 100%);
+  background: linear-gradient(to right,  $startColor 0%, $endColor 80%,$endColor 100%);
+}
+
 // OPACITY
 @mixin opacity($opacity) {
   $ie: ($opacity * 100);
