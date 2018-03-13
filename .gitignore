@@ -1,0 +1,6 @@
+# User specific & automatically generated files #
+#################################################
+/app/Config/database.php
+/app/Config/settings.php
+/app/tmp
+/app/webroot/node_modules

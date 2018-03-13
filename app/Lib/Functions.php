@@ -310,6 +310,17 @@ class Functions {
 		return $ipaddress;
 	}
 
-}
+	/** VERSIONING / CACHE CLEAR **/
+	public static function majestic_get_current_version($type) {
 
-?>
+		$allowedTypes = array('css', 'js');
+		$pathToVersionsJsonFile = WWW_ROOT . '/versions.json';
+		$versionsJson = file_get_contents($pathToVersionsJsonFile);
+		$versions = json_decode($versionsJson, true);
+		if (in_array($type, $allowedTypes) && isset($versions[$type])) {
+			return $versions[$type];
+		}
+
+	}
+
+}
