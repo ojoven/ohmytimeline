@@ -5,3 +5,5 @@
 /app/tmp
 /app/webroot/node_modules
 /app/webroot/.sass-cache
+
+.idea

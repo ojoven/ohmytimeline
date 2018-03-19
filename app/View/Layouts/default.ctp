@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<?php $title = __("realtl.io | Bring back your Twitter TL");
+	<?php $title = __("Oh My Timeline! | Bring back your Twitter TL");
 	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted."); ?>
 	<title><?php echo $title; ?></title>
 
@@ -40,7 +40,7 @@
 
 <!-- HEADER -->
 <header id="main-header">
-	<h1>realtl.io</h1>
+	<h1>Oh my timeline!</h1>
 
 	<h2 class="main-description">Bring back your Twitter Timeline</h2>
 
