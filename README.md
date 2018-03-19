@@ -1,4 +1,4 @@
-realtl.io
+Oh My Timeline!
 =======
 
 [![RealTL.io](https://whoinfluenc.es/img/who-influences-logo-bigger.png)](https://realtl.io)
@@ -16,7 +16,7 @@ The trick? We create for you a Twitter list with the people you're following.
 
 About
 ----------------
-RealTL.io is a weekend project made by [@ojoven](https://twitter.com/ojoven)
+Oh My Timeline! is a weekend project made by [@ojoven](https://twitter.com/ojoven)
 
 
 Notes
