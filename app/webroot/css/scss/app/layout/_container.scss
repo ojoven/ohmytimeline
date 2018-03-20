@@ -4,7 +4,7 @@
 // Default Grid Container related styles
 
 // Vars
-$containerMaxWidth: 1180px;
+$containerMaxWidth: 980px;
 
 .container {
   position: relative;
@@ -17,7 +17,7 @@ $containerMaxWidth: 1180px;
   position: relative;
   text-align: center;
   background: $white;
-  min-height: 600px;
+  padding-bottom: 100px;
 }
 
 // ==============================================

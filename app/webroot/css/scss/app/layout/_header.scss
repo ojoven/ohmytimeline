@@ -13,11 +13,21 @@
 		@extend .special;
 		margin-top: 50px;
 		font-size: 74px;
+		color: #444;
 	}
 
-	.main-description {
+	// Big description
+	h2 {
 		margin: 20px 0;
 		font-size: 32px;
+	}
+
+	// Little description
+	h3 {
+		margin: 20px auto;
+		width: 600px;
+		max-width: 90%;
+		font-size: 22px;
 	}
 
 	.main-features {

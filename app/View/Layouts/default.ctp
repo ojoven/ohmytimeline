@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<?php $title = __("Oh My Timeline! | Bring back your Twitter TL");
+	<?php $title = __("Oh, my Timeline! | Bring back your Twitter TL");
 	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted."); ?>
 	<title><?php echo $title; ?></title>
 
@@ -40,15 +40,23 @@
 
 <!-- HEADER -->
 <header id="main-header">
-	<h1>Oh my timeline!</h1>
+	<h1>Oh, my Timeline!</h1>
 
-	<h2 class="main-description">Bring back your Twitter Timeline</h2>
+	<h2 class="big-description">
+		Bring back your Twitter Timeline.<br>
+	</h2>
+
+	<h3>
+		There's no secret.<br>
+		I create a Twitter list with the people you follow.<br>
+		Did you know that Twitter lists include...?
+	</h3>
 
 	<ul class="main-features fa-ul">
-		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No ads</li>
-		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No faved tweets from people you follow</li>
-		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>No "you may have missed" tweets</li>
-		<li><span class="fa-li"><i class="fas fa-check-circle"></i></span>Only your TL's tweets, sorted in real time</li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span>No ads</li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span>No faved tweets from people you follow</li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span>No "you may have missed" tweets</li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span>Only the tweets you ❤ sorted in real time</li>
 	</ul>
 
 </header>
@@ -56,12 +64,12 @@
 <!-- MAIN CONTENT -->
 <main id="main-container">
 
+	<!-- CTA -->
 	<section class="cta">
 
 		<!-- FOLLOW -->
 		<div class="message">
-			This is a free service and an open source project.<br>
-			You can payback by following me on Twitter, where I post content about UX, products, MEMEs and more!
+			To be aware of my other side projects and enjoy tweets and memes about UX, products, etc. why don't you also...?
 		</div>
 
 		<div class="follow">
@@ -79,11 +87,46 @@
 	</section>
 
 	<?php echo $this->fetch('content'); ?>
+
+	<!-- ADDITIONAL INFORMATION -->
+	<section class="information">
+
+		<div class="container">
+
+			<div class="columns">
+
+				<div class="block why">
+					<h3>
+						Why omt
+					</h3>
+					<p>I created a side project some time ago (whoinfluenc.es) and I realized, when browsing the lists' tweets, that all the annoyting features of my main TL were not there!</p>
+				</div>
+
+				<div class="block hack-ux">
+					<h3>
+						Hacking the UX
+					</h3>
+					<p>Everywhere you are, browser or Twitter app for Android or iOS. Your Twitter Timeline wherever you are.</p>
+				</div>
+
+				<div class="block open">
+					<h3>
+						Safe and sound
+					</h3>
+					<p>This is another open source side project from M.T. Ugarte. No side issues expected. Please check the code.</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
 </main>
 
 <!-- FOOTER -->
 <footer>
-	<span><?php echo __("Made with love by <a target='_blank' href='https://twitter.com/ojoven'>@ojoven</a>"); ?></span>
+	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/ojoven'>@ojoven</a>"); ?></span>
 </footer>
 
 <!-- JS -->

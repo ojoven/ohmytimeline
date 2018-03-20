@@ -3,8 +3,9 @@
 // ==============================================
 // Custom styles applied to the home page
 
+// CTA
 .cta {
-	width: 400px;
+	width: 410px;
 	background: $white;
 	box-shadow: 0 4px 3px #ddd;
 	margin: 0 auto 0;
@@ -41,5 +42,29 @@
 				font-size: 14px;
 			}
 		}
+	}
+}
+
+// PROGRESS
+#progress,
+#progress-render {
+	display: none;
+}
+
+// ADDITIONAL INFORMATION
+.information {
+
+	color: #444;
+	margin-top: 140px;
+
+	h3 {
+		color: #444;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		padding: 0 10px;
+		font-size: 16px;
 	}
 }
