@@ -47,16 +47,16 @@
 	</h2>
 
 	<h3>
-		There's no secret.<br>
-		I create a Twitter list with the people you follow.<br>
-		Did you know that Twitter lists include...?
+		<?php echo __("There's no secret."); ?><br>
+		<?php echo __("I create a Twitter list with the people you follow."); ?><br>
+		<?php echo __("Did you know that Twitter lists include...?"); ?>
 	</h3>
 
 	<ul class="main-features fa-ul">
-		<li><span class="fa-li"><i class="fas fa-check"></i></span>No ads</li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span>No faved tweets from people you follow</li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span>No "you may have missed" tweets</li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span>Only the tweets you ❤ sorted in real time</li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No ads"); ?></li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No \"you may have missed\" tweets"); ?></li>
+		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Only the tweets you ❤ sorted in real time"); ?></li>
 	</ul>
 
 </header>
@@ -69,7 +69,7 @@
 
 		<!-- FOLLOW -->
 		<div class="message">
-			To be aware of my other side projects and enjoy tweets and memes about UX, products, etc. why don't you also...?
+			<?php echo __("To be aware of my other side projects and enjoy tweets and memes about UX, products, etc. why don't you also...?"); ?>
 		</div>
 
 		<div class="follow">
@@ -82,7 +82,7 @@
 		</div>
 
 		<!-- BUTTON -->
-		<a href="#" class="fancy-button bg-gradient4"><span>Bring back my Twitter TL!</span></a>
+		<a href="#" class="fancy-button bg-gradient4"><span><?php echo __("Bring back my Twitter TL!"); ?></span></a>
 
 	</section>
 
@@ -97,23 +97,23 @@
 
 				<div class="block why">
 					<h3>
-						Why omt
+						<?php echo __("Why omt"); ?>
 					</h3>
-					<p>I created a side project some time ago (whoinfluenc.es) and I realized, when browsing the lists' tweets, that all the annoyting features of my main TL were not there!</p>
+					<p><?php echo __("I created a side project some time ago (whoinfluenc.es) and I realized, when browsing the lists' tweets, that all the annoyting features of my main TL were not there!"); ?></p>
 				</div>
 
 				<div class="block hack-ux">
 					<h3>
-						Hacking the UX
+						<?php echo __("Hacking the UX"); ?>
 					</h3>
-					<p>Everywhere you are, browser or Twitter app for Android or iOS. Your Twitter Timeline wherever you are.</p>
+					<p><?php echo __("Everywhere you are, browser or Twitter app for Android or iOS. Your Twitter Timeline wherever you are."); ?></p>
 				</div>
 
 				<div class="block open">
 					<h3>
-						Safe and sound
+						<?php echo __("Safe and sound"); ?>
 					</h3>
-					<p>This is another open source side project from M.T. Ugarte. No side issues expected. Please check the code.</p>
+					<p><?php echo __("This is another open source side project from M.T. Ugarte. No side issues expected. Please check the code."); ?></p>
 				</div>
 
 			</div>
