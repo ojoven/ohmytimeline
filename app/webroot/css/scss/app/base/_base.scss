@@ -12,8 +12,7 @@ html, body {
 
 body {
   @extend .regular;
-  //background: $bodyBg;
-  @include gradientBg($mainColor, lighten($mainColor, 10%));
+  background: $bodyBg;
   color: $fontColor;
 }
 

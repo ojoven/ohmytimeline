@@ -22,8 +22,8 @@
 
 	<!-- Le CDNs -->
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Londrina+Solid|Titillium+Web" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One|Open+Sans:400,700|Droid+Sans" rel="stylesheet">-->
 
 	<!-- Le icons -->
 	<link rel="shortcut icon" href="<?php echo Router::url("/") ?>img/favicon.png">
@@ -96,28 +96,41 @@
 			<div class="columns">
 
 				<div class="block why">
+					<i class="far fa-question-circle"></i>
 					<h3>
 						<?php echo __("Why omt"); ?>
 					</h3>
-					<p><?php echo __("I created a side project some time ago (whoinfluenc.es) and I realized, when browsing the lists' tweets, that all the annoyting features of my main TL were not there!"); ?></p>
+					<p><?php echo __("At some point, when browsing a list's tweets I realized that no ads, favs and algorithms were applied. I wanted that for my actual TL!<br><br>And probably you too."); ?></p>
 				</div>
 
 				<div class="block hack-ux">
+					<i class="fa fa-mobile-alt"></i>
 					<h3>
 						<?php echo __("Hacking the UX"); ?>
 					</h3>
-					<p><?php echo __("Everywhere you are, browser or Twitter app for Android or iOS. Your Twitter Timeline wherever you are."); ?></p>
+					<p><?php echo __("Wherever you are - be it a browser or any app for Android or iOS - your clean and sorted Oh My Timeline Twitter list goes with you.<br><br>Isn't that something to try?"); ?></p>
 				</div>
 
 				<div class="block open">
+					<i class="fab fa-github"></i>
 					<h3>
 						<?php echo __("Safe and sound"); ?>
 					</h3>
-					<p><?php echo __("This is another open source side project from M.T. Ugarte. No side issues expected. Please check the code."); ?></p>
+					<p><?php echo __("This is another open source side project from @ojoven No side issues expected. You can check this project's code on GitHub.<br><br>And of course, it's also free!"); ?></p>
 				</div>
 
 			</div>
 
+		</div>
+
+	</section>
+
+	<!-- NUMBER OF TIMELINES BROUGHT BACK -->
+	<section class="numbers">
+
+		<div class="main">
+			<span class="number">210</span>
+			<span class="message">timelines brought back!</span>
 		</div>
 
 	</section>

@@ -8,7 +8,7 @@ TODO
 * Create Twitter app
 * Create Twitter profile for English
 * Change Twitter profile based on user's settings
-* Add translation
+* Add translations to Spanish
 
 
 TODO MARKETING
