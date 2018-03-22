@@ -3,9 +3,24 @@
 // ==============================================
 
 .columns {
-  display: flex;
-  flex:1;
-  > div {
-    flex: 3;
-  }
+	display: flex;
+	flex: 1;
+	> div {
+		flex: 3;
+	}
+}
+
+// ==============================================
+// MOBILE
+// ==============================================
+
+@include mobile {
+
+	.columns {
+		display: block;
+
+		> div {
+			margin-bottom: 40px;
+		}
+	}
 }

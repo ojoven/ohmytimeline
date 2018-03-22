@@ -62,4 +62,21 @@
 // ==============================================
 @include mobile {
 
+	#main-header {
+
+		// Main title
+		h1 {
+			font-size: 13vw;
+		}
+
+		h3 {
+			font-size: 5vw;
+		}
+
+		.main-features {
+			margin: 30px 60px;
+		}
+	}
+
+
 }

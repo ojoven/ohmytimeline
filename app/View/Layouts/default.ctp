@@ -116,7 +116,7 @@
 					<h3>
 						<?php echo __("Safe and sound"); ?>
 					</h3>
-					<p><?php echo __("This is another open source side project from @ojoven No side issues expected. You can check this project's code on GitHub.<br><br>And of course, it's also free!"); ?></p>
+					<p><?php echo __("This is another open source side project from @ojoven. No side issues expected. You can check this project's code on GitHub.<br><br>And of course, it's also free!"); ?></p>
 				</div>
 
 			</div>

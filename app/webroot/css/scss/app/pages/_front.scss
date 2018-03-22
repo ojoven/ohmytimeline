@@ -6,6 +6,7 @@
 // CTA
 .cta {
 	width: 410px;
+	max-width: 90%;
 	background: $white;
 	box-shadow: 0 4px 3px #ddd;
 	margin: 0 auto 0;
@@ -108,5 +109,25 @@
 		}
 
 	}
+
+}
+
+// ==============================================
+// MOBILE
+// ==============================================
+
+@include mobile {
+
+	// CTA
+	.cta {
+		padding: 30px 10px 15px;
+	}
+
+	// INFORMATION
+	.information {
+		display: block;
+		margin: 100px 0 50px;
+	}
+
 
 }
