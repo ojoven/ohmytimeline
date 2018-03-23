@@ -112,9 +112,9 @@ CakeLog::config('error', array(
 /** Let's set the APP_ENV **/
 if (isset($_SERVER['SERVER_NAME'])) {
 	switch($_SERVER['SERVER_NAME']) {
-		case 'realtl_io.local.host':
+		case 'ohmytimeline.local.host':
 			$appEnv = "development"; break;
-		case 'realtl_io.ojoven.es':
+		case 'ohmytimeline.ojoven.es':
 			$appEnv = "staging"; break;
 		default:
 			$appEnv = "production"; break;

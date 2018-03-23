@@ -40,6 +40,17 @@
 
 <!-- HEADER -->
 <header id="main-header">
+
+	<?php if ($authenticated) {?>
+		<div class="container">
+			<div class="menu">
+				<a href="<?php echo Router::url("/api/logout")?>" id="logout" class="menu-option">
+					<span><i class="fas fa-sign-out-alt"></i><?php echo __("Logout"); ?></span>
+				</a>
+			</div>
+		</div>
+	<?php }?>
+
 	<h1>Oh, my Timeline!</h1>
 
 	<h2 class="big-description">
@@ -82,7 +93,7 @@
 		</div>
 
 		<!-- BUTTON -->
-		<a href="#" class="fancy-button bg-gradient4"><span><?php echo __("Bring back my Twitter TL!"); ?></span></a>
+		<a href="#" id="to-send-form" class="fancy-button bg-gradient4"><span><?php echo __("Bring back my Twitter TL!"); ?></span></a>
 
 	</section>
 

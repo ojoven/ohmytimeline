@@ -17,38 +17,6 @@ class TwitterList extends AppModel {
 
 	const NUM_MAX_USERS_LIST = 5000;
 
-	public function updateDefaultImages() {
-
-		// First we retrieve the default users
-		$this->Influencer = ClassRegistry::init('Influencer');
-		$defaultInfluencers = $this->Influencer->findAllByDefault(1);
-
-		// We extract their screen names to an array
-		$influencerScreenNames = array();
-		foreach ($defaultInfluencers as $defaultInfluencer) {
-			array_push($influencerScreenNames, $defaultInfluencer['Influencer']['screen_name']);
-		}
-
-		// Let's retrieve their users from Twitter
-		$defaultUserId = Configure::read('Twitter.defaultUserId');
-		$connection = $this->getConnection($defaultUserId,false);
-		$users = $connection->get('users/lookup', array('screen_name' => $influencerScreenNames));
-
-		// Let's get their images
-		foreach ($users as $user) {
-			if (isset($user->profile_image_url)) {
-				$image = $user->profile_image_url;
-				file_put_contents('log', $image);
-				echo $image.PHP_EOL;
-				$this->Influencer->updateAll(
-				    array('Influencer.image' => "'".$image."'"),
-				    array('Influencer.user_id' => $user->id)
-				);
-			}
-		}
-
-	}
-
 	public function createList($userId,$username,$visibility,$optimization) {
 
 		$this->_flushManagement();
@@ -62,7 +30,8 @@ class TwitterList extends AppModel {
 
 		$this->totalSteps = $this->numTries + 5;
 		$connection = $this->getConnection($userId,true);
-		if ($connection) {
+		//if ($connection) {
+		if (0) {
 			$this->_createList($connection,$username,$visibility);
 		} else {
 			$this->_setProgressError(__("There was a problem connecting to Twitter."));

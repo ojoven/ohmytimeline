@@ -43,6 +43,26 @@
 
 }
 
+// LOGGED IN
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: right;
+	padding: 15px;
+
+	.menu-option {
+		text-decoration: none;
+		font-size: 14px;
+
+		i {
+			font-size: 80%;
+			margin-right: 5px;
+		}
+	}
+}
+
 // ==============================================
 // IPAD LANDSCAPE
 // ==============================================

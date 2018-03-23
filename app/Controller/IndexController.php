@@ -4,9 +4,7 @@ App::uses('ProgressBar', 'Lib');
 
 class IndexController extends AppController {
 
-	public $uses = array('TwitterList','Influencer','User');
-
-	const NUM_MAX_INFLUENCERS = 12;
+	public $uses = array('TwitterList', 'User');
 
 	public function index() {
 
@@ -53,13 +51,6 @@ class IndexController extends AppController {
 
 	// CREDENTIALS
 	public function authorize() {
-
-		$username = $this->request->data['username'];
-		$visibility = $this->request->data['visibility'];
-		$optimization = $this->request->data['optimization'];
-		$this->Session->write('username',$username);
-		$this->Session->write('visibility',$visibility);
-		$this->Session->write('optimization',$optimization);
 
 		$connection = $this->TwitterList->getTmpConnection();
 		$callbackUrl = Router::url('/api/callback',true);
