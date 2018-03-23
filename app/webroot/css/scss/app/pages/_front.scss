@@ -47,9 +47,41 @@
 }
 
 // PROGRESS
-#progress,
+#progress {
+	display:none;
+	max-width:1024px;
+	margin:30px auto;
+	height:89px;
+
+}
+
 #progress-render {
-	display: none;
+	width:300px;
+	margin:15px auto;
+}
+
+#progress-bar {
+	@include transition(width,0.5s,ease-in-out);
+	background:#00688B;
+	width:0;
+	height:2px;
+	margin:0;
+	float:left;
+}
+
+#progress-message {
+	display: block;
+	padding: 15px 0;
+	width: 300px;
+	color:#999;
+	&.progress { background:#B4CDCD; color:#212021; }
+	&.error { background:#FF7256; color:#212021; }
+	&.success {
+		background: #93DB70; cursor:pointer; color:#212021;
+		&:hover {
+			background:#71b950;
+		}
+	}
 }
 
 // ADDITIONAL INFORMATION

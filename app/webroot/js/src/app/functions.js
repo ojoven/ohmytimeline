@@ -14,6 +14,10 @@ function sendForm() {
 		return false;
 	});
 
+	if (authenticated) {
+		submitForm();
+	}
+
 }
 
 function submitForm() {

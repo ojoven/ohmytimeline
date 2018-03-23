@@ -17,7 +17,10 @@ class TwitterList extends AppModel {
 
 	const NUM_MAX_USERS_LIST = 5000;
 
-	public function createList($userId,$username,$visibility,$optimization) {
+	public function createList($userId,$username) {
+
+		$userId = Configure::read('Twitter.defaultUserId'); // TMP TODO REMOVE FROM HERE
+		$username = 'ojoven'; // TMP TODO REMOVE FROM HERE
 
 		$this->_flushManagement();
 
@@ -26,20 +29,21 @@ class TwitterList extends AppModel {
 			return false;
 		}
 
-		$this->numTries = ($optimization=="1") ? self::NUM_TRIES_COMPLETE : self::NUM_TRIES_QUICK;
+		$this->numTries = self::NUM_TRIES_COMPLETE;
 
 		$this->totalSteps = $this->numTries + 5;
 		$connection = $this->getConnection($userId,true);
-		//if ($connection) {
-		if (0) {
-			$this->_createList($connection,$username,$visibility);
+		if ($connection) {
+			$this->_createList($connection, $username);
 		} else {
 			$this->_setProgressError(__("There was a problem connecting to Twitter."));
 		}
 
 	}
 
-	private function _createList($connection,$username,$visibility) {
+	private function _createList($connection,$username) {
+
+		$publicList = true;
 
 		if (isset($username)) {
 			$username = str_replace("@","",$username);
@@ -64,12 +68,12 @@ class TwitterList extends AppModel {
 
 				// Let's create the list
 				$usernameWithAt = "@".$username;
-				$params['name'] = __("WhoInfluences ") . $usernameWithAt;
+				$params['name'] = __("Oh, My Timeline! - ") . $usernameWithAt;
 				if (strlen($params['name'])>25) {
-					$params['name'] = Functions::shortString(__("Influence ") . $usernameWithAt,25);
+					$params['name'] = Functions::shortString(__("OMT! ") . $usernameWithAt, 25);
 				}
-				$params['description'] = "Users who influence " . $usernameWithAt . " on Twitter - Create yours at http://whoinfluenc.es";
-				$params['mode'] = ($visibility=="1") ? "public" : "private";
+				$params['description'] = "No ads, no algorithms, just my clean TL - Create yours at https://ohmytimeline.com";
+				$params['mode'] = ($publicList) ? "public" : "private";
 				$this->_setUpdateProgress(4,__("Creating list..."));
 				$list = $connection->post('lists/create', $params);
 
@@ -113,45 +117,11 @@ class TwitterList extends AppModel {
 
 				// Finish!
 
-				// Save data Influencer
-				$this->Influencer = ClassRegistry::init('Influencer');
-				$previousInfluencer = $this->Influencer->findByUserId($influencer->id);
-
-				if ($previousInfluencer) {
-					$this->Influencer->id = $previousInfluencer['Influencer']['id'];
-				} else {
-					$this->Influencer->create();
-				}
-
-				$dataInfluencer['user_id'] = $influencer->id;
-				$dataInfluencer['screen_name'] = $influencer->screen_name;
-				$dataInfluencer['name'] = $influencer->name;
-				$dataInfluencer['image'] = $influencer->profile_image_url;
-				$dataInfluencer['friends_count'] = $influencer->friends_count;
-				$dataInfluencer['followers_count'] = $influencer->followers_count;
-				$dataInfluencer['json'] = json_encode((array)$influencer);
-
-				$this->Influencer->save($dataInfluencer);
-
-				$influencerId = $this->Influencer->id;
-
 				$user = CakeSession::read('user');
 
-				try {
+				$listUrl = "https://twitter.com/".$list->user->screen_name."/lists/".$list->slug;
+				$this->_setUpdateProgress($step+1, __("List created! Click here to see it."), 'success', $listUrl);
 
-					// Save data list
-					$this->InfluencerUser = ClassRegistry::init('InfluencerUser');
-					$userProfile = $this->User->findByUsername($list->user->screen_name);
-					$dataInfluencerUser['user_id'] = $userProfile['User']['id'];
-					$dataInfluencerUser['influencer_id'] = $influencerId;
-					$this->InfluencerUser->save($dataInfluencerUser);
-					$listUrl = "https://twitter.com/".$list->user->screen_name."/lists/".$list->slug;
-					$this->_setUpdateProgress($step+1,__("List created! Click here to see it."),'success',$listUrl);
-
-				} catch (Exception $e) {
-					$listUrl = "https://twitter.com/".$list->user->screen_name."/lists/".$list->slug;
-					$this->_setUpdateProgress($step+1,__("List created! Click here to see it."),'success',$listUrl);
-				}
 			}
 		}
 

@@ -92,12 +92,10 @@
 			</div>
 		</div>
 
-		<!-- BUTTON -->
-		<a href="#" id="to-send-form" class="fancy-button bg-gradient4"><span><?php echo __("Bring back my Twitter TL!"); ?></span></a>
+		<!-- CONTENT -->
+		<?php echo $this->fetch('content'); ?>
 
 	</section>
-
-	<?php echo $this->fetch('content'); ?>
 
 	<!-- ADDITIONAL INFORMATION -->
 	<section class="information">
@@ -156,6 +154,7 @@
 <!-- JS -->
 <script type="text/javascript">
 	urlBase = "<?php echo Router::url("/");?>";
+	authenticated = <?php echo ($authenticated) ? "true" : "false"; ?>;
 </script>
 
 <script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
