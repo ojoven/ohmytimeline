@@ -6,28 +6,37 @@
 
 	width: 100%;
 	text-align: center;
-	padding-bottom: 150px;
+	padding-bottom: 70px;
 
 	// Main title
 	h1 {
 		@extend .special;
-		margin-top: 50px;
-		font-size: 74px;
-		color: #000;
+		margin-top: 0;
+		font-size: 26px;
+		color: #fff;
+		padding: 10px;
+		background: $queenBlue;
+
+		// Disappear effect
+		.disappear {
+			width: 0;
+		}
 	}
 
 	// Big description
 	h2 {
-		margin: 20px 0;
+		margin: 40px 0 20px;
 		font-size: 32px;
 	}
 
 	// Little description
 	h3 {
-		margin: 20px auto;
-		width: 600px;
+		width: 390px;
 		max-width: 90%;
-		font-size: 22px;
+		font-weight: normal;
+		font-size: 16px;
+		margin: 10px 0 0;
+		display: inline-block;
 	}
 
 	.main-features {
@@ -86,15 +95,16 @@
 
 		// Main title
 		h1 {
-			font-size: 13vw;
+			font-size: 22px
 		}
 
 		h3 {
-			font-size: 5vw;
+			font-size: 4.4vw;
 		}
 
 		.main-features {
 			margin: 30px 60px;
+			font-size: 4.4vw;
 		}
 	}
 

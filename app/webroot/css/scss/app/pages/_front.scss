@@ -5,15 +5,15 @@
 
 // CTA
 .cta {
-	width: 410px;
+	width: 390px;
 	max-width: 90%;
 	background: $white;
 	box-shadow: 0 4px 3px #ddd;
 	margin: 0 auto 0;
 	color: $black;
 	position: absolute;
-	top: -140px;
-	padding: 30px 40px;
+	top: -65px;
+	padding: 0 15px;
 	left: 50%;
 	@include translateX(-50%);
 
@@ -44,6 +44,17 @@
 			}
 		}
 	}
+
+	.disclaimer {
+		position: absolute;
+		bottom: -36px;
+		width: 100%;
+		font-size: 12px;
+	}
+}
+
+#main-form {
+	display: none;
 }
 
 // PROGRESS
@@ -85,10 +96,17 @@
 }
 
 // ADDITIONAL INFORMATION
-.information {
+.info-section {
 
 	color: #444;
 	margin: 140px 0 100px;
+
+	// Section Title
+	h2 {
+		color: $queenBlue;
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
 
 	// Title
 	h3 {
@@ -108,9 +126,10 @@
 	// Block and icons
 	.block {
 		> i {
-			font-size: 60px;
-			margin-bottom: 20px;
+			font-size: 36px;
+			//margin-bottom: 20px;
 			color: $queenBlue;
+			font-style: normal;
 		}
 
 		br {
@@ -152,7 +171,7 @@
 
 	// CTA
 	.cta {
-		padding: 30px 10px 15px;
+		padding: 0;
 	}
 
 	// INFORMATION

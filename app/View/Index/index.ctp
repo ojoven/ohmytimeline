@@ -30,7 +30,7 @@
 <?php } else { ?>
 
 	<!-- NO AUTHENTICATED -->
-	<a href="#" id="to-send-form" class="fancy-button bg-gradient4"><span><?php echo __("Bring back my Twitter TL!"); ?></span></a>
+	<a href="#" id="to-send-form" class="btn btn-main"><?php echo __("Bring back my Twitter TL!"); ?></a>
 
 	<form id="main-form" action="<?php echo Router::url("/api/authorize"); ?>" method="post">
 

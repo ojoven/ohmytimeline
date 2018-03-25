@@ -23,6 +23,7 @@
 	<!-- Le CDNs -->
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Londrina+Solid|Titillium+Web" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arvo|Cabin|Josefin+Sans|Nunito|Poppins|Raleway" rel="stylesheet">
 	<!--<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One|Open+Sans:400,700|Droid+Sans" rel="stylesheet">-->
 
 	<!-- Le icons -->
@@ -51,16 +52,14 @@
 		</div>
 	<?php }?>
 
-	<h1>Oh, my Timeline!</h1>
+	<h1>O<span class="disappear">h </span>M<span class="disappear">y </span>T<span class="disappear">imeline</span>!</h1>
 
 	<h2 class="big-description">
-		Bring back your Twitter Timeline.<br>
+		Bring back your <br class="just-mobile">Twitter Timeline.<br>
 	</h2>
 
 	<h3>
-		<?php echo __("There's no secret."); ?><br>
-		<?php echo __("I create a Twitter list with the people you follow."); ?><br>
-		<?php echo __("Did you know that Twitter lists include...?"); ?>
+		<?php echo __("1. We create a Twitter list with the people you follow and 2. You add a direct link to the list on your mobile screen. That easy."); ?>
 	</h3>
 
 	<ul class="main-features fa-ul">
@@ -78,6 +77,7 @@
 	<!-- CTA -->
 	<section class="cta">
 
+		<?php /**
 		<!-- FOLLOW -->
 		<div class="message">
 			<?php echo __("To be aware of my other side projects and enjoy tweets and memes about UX, products, etc. why don't you also...?"); ?>
@@ -91,13 +91,20 @@
 				<label for="follow-check">Follow me</label>
 			</div>
 		</div>
+		**/ ?>
 
 		<!-- CONTENT -->
 		<?php echo $this->fetch('content'); ?>
 
+		<!-- DISCLAIMER -->
+		<div class="disclaimer">
+			*You'll be redirected to sign in with Twitter<br>
+			[No automatic tweets nor similar shit, promised]
+		</div>
+
 	</section>
 
-	<!-- ADDITIONAL INFORMATION -->
+	<!-- ADDITIONAL INFORMATION
 	<section class="information">
 
 		<div class="container">
@@ -133,8 +140,9 @@
 		</div>
 
 	</section>
+	-->
 
-	<!-- NUMBER OF TIMELINES BROUGHT BACK -->
+	<!-- NUMBER OF TIMELINES BROUGHT BACK
 	<section class="numbers">
 
 		<div class="main">
@@ -143,6 +151,7 @@
 		</div>
 
 	</section>
+ 	-->
 
 </main>
 
