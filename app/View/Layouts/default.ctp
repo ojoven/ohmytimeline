@@ -105,6 +105,8 @@
 	</section>
 
 	<!-- AUTHOR -->
+
+	<!-- ADDITIONAL INFORMATION
 	<section class="information">
 
 		<div class="container">
