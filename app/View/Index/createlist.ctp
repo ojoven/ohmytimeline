@@ -19,6 +19,6 @@ function update_progress(step,total,message,type,url) {
 
 <?php
 $twitterList = ClassRegistry::init('TwitterList');
-$twitterList->createList($userId,$username,$visibility,$optimization);?>
+$twitterList->createList($follow);?>
 </body>
 </html>

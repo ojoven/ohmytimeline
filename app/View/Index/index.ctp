@@ -2,13 +2,12 @@
 <!-- AUTHENTICATED -->
 <?php if ($authenticated) { ?>
 
+	<a href="#" id="to-send-form" class="btn btn-main"><?php echo __("Bring back my Twitter TL!"); ?></a>
+
 	<form id="main-form" action="<?php echo Router::url("/api/createlist"); ?>" method="post" target="progress">
 
 		<div class="form-container">
 			<input type="submit" style="display:none;">
-			<a href="#" id="to-send-form" class="btn btn-main" data-to-authorize="<?php echo ($authenticated) ? "0" : "1"; ?>"><?php echo __("Create list!"); ?></a>
-
-			<div class="disabler"></div>
 		</div>
 
 	</form>
@@ -36,9 +35,6 @@
 
 		<div class="form-container">
 			<input type="submit" style="display:none;">
-			<a href="#" id="to-send-form" class="btn btn-main" data-to-authorize="<?php echo ($authenticated) ? "0" : "1"; ?>"><?php echo __("Create list!"); ?></a>
-
-			<div class="disabler"></div>
 		</div>
 
 	</form>

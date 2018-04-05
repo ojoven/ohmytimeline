@@ -116,12 +116,12 @@
 
 			<div class="follow-container">
 				<h3>
-					<?php echo __("This is a side project<br> made by @ojoven"); ?>
+					<?php echo __("This is a side project<br> made by @lindydeveloper"); ?>
 				</h3>
 				<h4>
 					<input id="follow" name="follow" type="checkbox" checked />
 					<label for="follow"><?php echo __("*Follow me on Twitter"); ?></label>
-					<p><?php echo __("For interesting tweets about side projects,<br>creativeness, UX, delicious MEMEs and more!"); ?></p>
+					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and to let me know<br> how Oh My Timeline works for you!"); ?></p>
 				</h4>
 			</div>
 
@@ -144,7 +144,7 @@
 
 <!-- FOOTER -->
 <footer>
-	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/ojoven'>@ojoven</a>"); ?></span>
+	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/ojoven'>@lindydeveloper</a>"); ?></span>
 </footer>
 
 <!-- JS -->

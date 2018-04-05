@@ -33,7 +33,8 @@ class TwitterList extends AppModel {
 
 		$this->totalSteps = $this->numTries + 5;
 		$connection = $this->getConnection($userId,true);
-		if ($connection) {
+		//if ($connection) {
+		if (0) {
 			$this->_createList($connection, $username);
 		} else {
 			$this->_setProgressError(__("There was a problem connecting to Twitter."));

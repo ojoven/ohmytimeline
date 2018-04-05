@@ -96,7 +96,11 @@ class IndexController extends AppController {
 			$username = $this->Session->read('username');
 
 			$user = $connection->get('account/verify_credentials');
+
 			$this->loadModel('User');
+
+			// TODO: Save the user in the database
+			/**
 			$previousUser = $this->User->findByUserId($user->id);
 			if ($previousUser) {
 				$this->User->id = $previousUser['User']['id'];
@@ -114,6 +118,8 @@ class IndexController extends AppController {
 			$this->User->save($data);
 			$userDb = $this->User->findById($this->User->id);
 			$this->Session->write('user',$userDb);
+			 **/
+
 			$this->redirect(Router::url("/",true));
 		} else {
 			/* Save HTTP status for error dialog on connnect page.*/
@@ -125,15 +131,8 @@ class IndexController extends AppController {
 	// CREATE list
 	public function createlist() {
 
-		$username = $this->request->data['username'];
-		$userId = $this->request->data['user_id'];
-		$visibility = $this->request->data['visibility'];
-		$optimization = $this->request->data['optimization'];
-
-		$this->set('userId',$userId);
-		$this->set('username',$username);
-		$this->set('visibility',$visibility);
-		$this->set('optimization',$optimization);
+		$username = $this->request->data['follow'];
+		$this->set('follow',$username);
 		$this->autoLayout = false;
 	}
 

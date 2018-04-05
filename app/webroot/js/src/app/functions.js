@@ -50,7 +50,7 @@ function sendForm() {
 	});
 
 	if (authenticated) {
-		submitForm();
+		//submitForm();
 	}
 
 }
@@ -60,7 +60,6 @@ function submitForm() {
 	$(".disabler").show();
 	if (ableToSend) {
 		ableToSend = false;
-		console.log('submit!!');
 		$("#main-form").submit();
 	}
 }
