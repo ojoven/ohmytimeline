@@ -99,50 +99,35 @@
 		<!-- DISCLAIMER -->
 		<div class="disclaimer">
 			*You'll be redirected to sign in with Twitter<br>
-			[No automatic tweets nor similar shit, promised]
+			[No automatic tweets nor spam, just one thing*]
 		</div>
 
 	</section>
 
-	<!-- AUTHOR -->
-
-	<!-- ADDITIONAL INFORMATION
-	<section class="information">
+	<!-- ADDITIONAL INFORMATION -->
+	<section class="author">
 
 		<div class="container">
 
-			<div class="columns">
+			<div class="avatar-container">
+				<img src="<?php echo Router::url("/") ?>img/avatars/avatar_happy_1.jpg" />
+				<img src="<?php echo Router::url("/") ?>img/avatars/avatar_happy_1.jpg" />
+			</div>
 
-				<div class="block why">
-					<i class="far fa-question-circle"></i>
-					<h3>
-						<?php echo __("Why omt"); ?>
-					</h3>
-					<p><?php echo __("At some point, when browsing a list's tweets I realized that no ads, favs and algorithms were applied. I wanted that for my actual TL!<br><br>And probably you too."); ?></p>
-				</div>
-
-				<div class="block hack-ux">
-					<i class="fa fa-mobile-alt"></i>
-					<h3>
-						<?php echo __("Hacking the UX"); ?>
-					</h3>
-					<p><?php echo __("Wherever you are - be it a browser or any app for Android or iOS - your clean and sorted Oh My Timeline Twitter list goes with you.<br><br>Isn't that something to try?"); ?></p>
-				</div>
-
-				<div class="block open">
-					<i class="fab fa-github"></i>
-					<h3>
-						<?php echo __("Safe and sound"); ?>
-					</h3>
-					<p><?php echo __("This is another open source side project from @ojoven. No side issues expected. You can check this project's code on GitHub.<br><br>And of course, it's also free!"); ?></p>
-				</div>
-
+			<div class="follow-container">
+				<h3>
+					<?php echo __("This is a side project<br> made by @ojoven"); ?>
+				</h3>
+				<h4>
+					<input id="follow" name="follow" type="checkbox" checked />
+					<label for="follow"><?php echo __("*Follow me on Twitter"); ?></label>
+					<p><?php echo __("For interesting tweets about side projects,<br>creativeness, UX, delicious MEMEs and more!"); ?></p>
+				</h4>
 			</div>
 
 		</div>
 
 	</section>
-	-->
 
 	<!-- NUMBER OF TIMELINES BROUGHT BACK
 	<section class="numbers">

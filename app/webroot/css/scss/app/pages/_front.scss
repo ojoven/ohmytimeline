@@ -96,16 +96,31 @@
 }
 
 // ADDITIONAL INFORMATION
-.info-section {
+.author {
 
 	color: #444;
 	margin: 140px 0 100px;
 
-	// Section Title
-	h2 {
-		color: $queenBlue;
-		font-size: 20px;
-		margin-bottom: 30px;
+	// Avatar
+	.avatar-container {
+		margin: 0 auto 15px;
+		width: 120px;
+		height: 120px;
+
+		img {
+			@include transition(opacity .3s ease);
+			@include X-50();
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 120px;
+			border-radius: 50%;
+
+			&:last-child {
+				opacity: 0;
+			}
+		}
+
 	}
 
 	// Title
@@ -123,19 +138,6 @@
 		color: #444;
 	}
 
-	// Block and icons
-	.block {
-		> i {
-			font-size: 36px;
-			//margin-bottom: 20px;
-			color: $queenBlue;
-			font-style: normal;
-		}
-
-		br {
-			height: 5px;
-		}
-	}
 }
 
 // NUMBERS
@@ -175,7 +177,7 @@
 	}
 
 	// INFORMATION
-	.information {
+	.author {
 		display: block;
 		margin: 100px 0 50px;
 	}

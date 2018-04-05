@@ -10,6 +10,14 @@
 	}
 }
 
+.single-2-side-columns {
+	display: flex;
+	flex: 1;
+	> div {
+		flex: 2;
+	}
+}
+
 // ==============================================
 // MOBILE
 // ==============================================
@@ -22,5 +30,9 @@
 		> div {
 			margin-bottom: 40px;
 		}
+	}
+
+	.single-2-side-columns {
+		display: block;
 	}
 }

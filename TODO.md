@@ -1,12 +1,11 @@
 TODO
 =======
 
-* Add information blocks / icons
+* Add information on following side projecter
 * Create view for pseudo PWA
 * Create logo
 * Create connection with backend / Create list process
 * Create Twitter app
-* Create Twitter profile for English
 * Change Twitter profile based on user's settings
 * Add translations to Spanish
 
