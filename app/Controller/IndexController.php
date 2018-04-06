@@ -6,31 +6,15 @@ class IndexController extends AppController {
 
 	public $uses = array('TwitterList', 'User');
 
+	/** INDEX **/
 	public function index() {
 
-		if (isset($this->request->query['not_authorized'])) {
+		if ($this->_isNotAuthorizedFromTwitter()) {
 			$this->Session->destroy();
 		}
 
-		$this->_setUsernameFromSession();
 		$this->_setAuthenticated();
 
-	}
-
-	private function _setUsernameFromSession() {
-		$username = $this->Session->read('username');
-		if ($username) {
-			$username = str_replace("@", "", $username);
-			$this->set('username',$username);
-
-			$visibility = $this->Session->read('visibility');
-			$optimization = $this->Session->read('optimization');
-			$this->set('visibility',$visibility);
-			$this->set('optimization',$optimization);
-			$this->Session->delete('username');
-			$this->Session->delete('visibility');
-			$this->Session->delete('optimization');
-		}
 	}
 
 	private function _setAuthenticated() {
@@ -44,12 +28,14 @@ class IndexController extends AppController {
 		}
 	}
 
+	/** LOGOUT **/
 	public function logout() {
 		$this->Session->destroy();
 		$this->redirect(Router::url("/",true));
 	}
 
-	// CREDENTIALS
+	/** TWITTER **/
+	// AUTHORIZE
 	public function authorize() {
 
 		$connection = $this->TwitterList->getTmpConnection();
@@ -73,6 +59,7 @@ class IndexController extends AppController {
 		}
 	}
 
+	// CALLBACK
 	public function callback() {
 
 		if (!isset($_REQUEST['oauth_token']) || isset($_REQUEST['oauth_token']) && $this->Session->read('oauth_token') !== $_REQUEST['oauth_token']) {
@@ -93,14 +80,15 @@ class IndexController extends AppController {
 
 		/* If HTTP response is 200 continue otherwise send to connect page to retry */
 		if (200 == $connection->http_code) {
-			$username = $this->Session->read('username');
 
+			// Get the Twitter user information
 			$user = $connection->get('account/verify_credentials');
 
-			$this->loadModel('User');
+			// Save the User in the Session
+			$this->Session->write('user', $user);
 
-			// TODO: Save the user in the database
-			/**
+			// Save the user in the database
+			$this->loadModel('User');
 			$previousUser = $this->User->findByUserId($user->id);
 			if ($previousUser) {
 				$this->User->id = $previousUser['User']['id'];
@@ -117,10 +105,9 @@ class IndexController extends AppController {
 
 			$this->User->save($data);
 			$userDb = $this->User->findById($this->User->id);
-			$this->Session->write('user',$userDb);
-			 **/
 
 			$this->redirect(Router::url("/",true));
+
 		} else {
 			/* Save HTTP status for error dialog on connnect page.*/
 			$this->redirect(Router::url("/"));
@@ -128,11 +115,12 @@ class IndexController extends AppController {
 
 	}
 
-	// CREATE list
+	/** IFRAME **/
 	public function createlist() {
 
-		$username = $this->request->data['follow'];
-		$this->set('follow',$username);
+		$user = $this->Session->read('user');
+		$this->set('username', $user->screen_name);
+		$this->set('userId', $user->id);
 		$this->autoLayout = false;
 	}
 
@@ -149,4 +137,10 @@ class IndexController extends AppController {
 		$this->TwitterList->checkListUsers();
 	}
 
+	// AUXILIAR
+	private function _isNotAuthorizedFromTwitter() {
+
+		return (isset($this->request->query['not_authorized']));
+
+	}
 }

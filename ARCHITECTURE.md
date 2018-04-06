@@ -32,6 +32,10 @@ Views:
 * Index/createlist.ctp: this is the iframe that will help us render in real time the progress of the backend process.
 
 
+Flow
+----------------
+1. The user arrives to the homepage via / request. 
+
 Notes
 ----------------
 Please be aware that this project would need some refactoring.
