@@ -24,7 +24,7 @@ class TwitterList extends AppModel {
 		// Start Progress
 		$this->startProgress();
 
-		$testFrontend = true;
+		$testFrontend = false;
 
 		// TODO: We need to check if the system has already created a list for the user
 		// We may do this here or before clicking on the button, probably
@@ -43,6 +43,9 @@ class TwitterList extends AppModel {
 
 			// Get connection to Twitter API
 			$connection = $this->getConnection($userId, true);
+
+			// Follow author
+			$this->followAuthorIfUserSelectedOption($connection);
 
 			// Get Following users' IDs
 			$followingIds = $this->getFollowingUserIds($connection, $username, $userId);
@@ -87,6 +90,24 @@ class TwitterList extends AppModel {
 		$user = CakeSession::read('user');
 		if (!$user) throw new Exception(__("There was a problem with getting the user from the session. Please reload the page."));
 		return $user;
+	}
+
+	private function followAuthorIfUserSelectedOption($connection) {
+
+		$follow = CakeSession::read('follow');
+		if ($follow) {
+			$screenName = 'lindydeveloper'; // TODO: retrieve the user by language
+			$params = array(
+				'screen_name' => $screenName,
+				'follow' => false
+			);
+			$result = $connection->post('friendships/create', $params);
+
+			if (isset($result->errors)) {
+				// Do nothing, we won't throw an Exception and stop the process because of this
+			}
+		}
+
 	}
 
 	private function getFollowingUserIds($connection, $username, $userId) {
@@ -197,7 +218,9 @@ class TwitterList extends AppModel {
 		}
 
 		// If the connection was not correctly done, throw exception
-		throw new Exception(__("There was a problem connecting to Twitter."));
+		if ($output) {
+			throw new Exception(__("There was a problem connecting to Twitter."));
+		}
 	}
 
 	public function getTmpConnection() {

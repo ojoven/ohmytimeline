@@ -46,6 +46,10 @@ class IndexController extends AppController {
 		$this->Session->write('oauth_token',$token);
 		$this->Session->write('oauth_token_secret',$request_token['oauth_token_secret']);
 
+		// Save in Session if author should be followed
+		$follow = (isset($_POST['follow']) && $_POST['follow'] === '1');
+		$this->Session->write('follow', $follow);
+
 		/* If last connection failed don't display authorization link. */
 		switch ($connection->http_code) {
 			case 200:

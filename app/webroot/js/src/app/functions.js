@@ -1,7 +1,9 @@
 /** FORM **/
 var ableToSend = true;
 
-var $progressMessage = $("#progress-message");
+var $progressMessage = $("#progress-message" ),
+	$avatarContainer = $('.avatar-container' ),
+	$checkbox = $('#follow');
 
 $(function() {
 	sendForm();
@@ -11,8 +13,6 @@ $(function() {
 // AVATAR
 function updateAvatarOnCheckbox() {
 
-	var $avatarContainer = $('.avatar-container');
-	var $checkbox = $('#follow');
 	var maxStep = 3;
 
 	// Initial values
@@ -61,13 +61,14 @@ function submitForm() {
 	$('.to-send-form-container').hide();
 	if (ableToSend) {
 		ableToSend = false;
+		var follow = $checkbox.is(':checked') ? 1 : 0;
+		$("#follow-input").val(follow);
 		$("#main-form").submit();
 	}
 }
 
 // PROGRESS
 function updateProgressBar(percentage) {
-	console.log(percentage);
 	$("#progress-bar").css('width',percentage+"%");
 }
 

@@ -9,6 +9,7 @@
 		<form id="main-form" action="<?php echo Router::url("/api/createlist"); ?>" method="post" target="progress">
 
 			<div class="form-container">
+				<input id="follow-input" type="hidden" name="follow" value="1" />
 				<input type="submit" style="display:none;">
 			</div>
 
@@ -33,6 +34,7 @@
 	<form id="main-form" action="<?php echo Router::url("/api/authorize"); ?>" method="post">
 
 		<div class="form-container">
+			<input id="follow-input" type="hidden" name="follow" value="1" />
 			<input type="submit" style="display:none;">
 		</div>
 
