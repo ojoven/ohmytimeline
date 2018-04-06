@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.58, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: realtl_io
+-- Host: localhost    Database: ohmytimeline
 -- ------------------------------------------------------
 -- Server version	5.5.58-0ubuntu0.14.04.1
 
@@ -26,6 +26,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
+  `omt_list_id` int(11) DEFAULT NULL,
+  `omt_list_slug` varchar(64) DEFAULT NULL,
   `oauth_token` text NOT NULL,
   `oauth_token_secret` text NOT NULL,
   `created` datetime NOT NULL,
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-13 16:41:48
+-- Dump completed on 2018-04-06 20:29:20

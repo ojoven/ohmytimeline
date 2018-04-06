@@ -50,6 +50,9 @@ class TwitterList extends AppModel {
 			// Let's create the list
 			$list = $this->createListOnTwitter($connection);
 
+			// Let's save the list on DB
+			$this->saveListOnDB($user, $list);
+
 			// Let's add the users to the list
 			$this->addUsersToListOnTwitter($connection, $list, $followingIds);
 
@@ -127,6 +130,21 @@ class TwitterList extends AppModel {
 				throw new Exception(__("There was a problem creating the list: ") . $list->errors[0]['message']);
 			}
 		}
+	}
+
+	private function saveListOnDB($user, $list) {
+
+		$this->User = ClassRegistry::init('User');
+		$userDB = $this->User->findByUserId($user->id);
+
+		$data = array(
+			'omt_list_id' => $list->id,
+			'omt_list_slug' => $list->slug,
+		);
+
+		$this->User->id = $userDB['User']['id'];
+		$this->User->save($data);
+
 	}
 
 	private function addUsersToListOnTwitter($connection, $list, $followingIds) {
