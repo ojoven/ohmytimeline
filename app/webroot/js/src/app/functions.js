@@ -67,6 +67,7 @@ function submitForm() {
 
 // PROGRESS
 function updateProgressBar(percentage) {
+	console.log(percentage);
 	$("#progress-bar").css('width',percentage+"%");
 }
 

@@ -12,7 +12,7 @@ class TwitterList extends AppModel {
 	const NUM_TRIES_QUICK = 1;
 
 	public $numTries;
-	public $totalSteps = 6;
+	public $totalSteps = 10;
 	public $credentials;
 	public $step;
 
@@ -20,6 +20,11 @@ class TwitterList extends AppModel {
 
 	/** CREATE LIST **/
 	public function createList() {
+
+		// Start Progress
+		$this->startProgress();
+
+		$testFrontend = true;
 
 		// TODO: We need to check if the system has already created a list for the user
 		// We may do this here or before clicking on the button, probably
@@ -31,8 +36,10 @@ class TwitterList extends AppModel {
 			$userId = $user->id;
 			$username = $user->screen_name;
 
-			// Start Progress
-			$this->startProgress();
+			if ($testFrontend) {
+				$this->testFrontend();
+				return false;
+			}
 
 			// Get connection to Twitter API
 			$connection = $this->getConnection($userId, true);
@@ -55,6 +62,20 @@ class TwitterList extends AppModel {
 			$this->setProgressError($e->getMessage());
 			return false;
 		}
+
+	}
+
+	private function testFrontend() {
+
+		$this->setUpdateProgress(1, __("Test 1"));
+		sleep(2);
+		$this->setUpdateProgress(2, __("Test 2"));
+		sleep(1);
+		$this->setUpdateProgress(3, __("Test 3"));
+		sleep(1);
+		$this->setUpdateProgress(3, __("Test 4"));
+		sleep(1);
+		$this->setUpdateProgress($this->totalSteps, __("Finish test"), 'success', 'https://ohmytimeline.local.host');
 
 	}
 
