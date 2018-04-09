@@ -74,14 +74,18 @@ class TwitterList extends AppModel {
 	private function testFrontend() {
 
 		$this->setUpdateProgress(1, __("Test 1"));
-		sleep(2);
+		sleep(1);
 		$this->setUpdateProgress(2, __("Test 2"));
 		sleep(1);
 		$this->setUpdateProgress(3, __("Test 3"));
 		sleep(1);
 		$this->setUpdateProgress(3, __("Test 4"));
 		sleep(1);
-		$this->setUpdateProgress($this->totalSteps, __("Finish test"), 'success', 'https://ohmytimeline.local.host');
+		$data = array(
+			'url' => '/',
+			'url_auxiliar' => 'https://ohmytimeline.local.host/asdfasdf',
+		);
+		$this->setUpdateProgress($this->totalSteps, __("Success!"), 'success', $data);
 
 	}
 
@@ -266,8 +270,8 @@ class TwitterList extends AppModel {
 		$this->setUpdateProgress(0, $message, 'error');
 	}
 
-	private function setUpdateProgress($partial, $message, $type = "progress", $url = null) {
-		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . $url . "')</script>" . str_repeat(" ", 1000);
+	private function setUpdateProgress($partial, $message, $type = "progress", $data = null) {
+		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . json_encode($data) . "')</script>" . str_repeat(" ", 1000);
 		ob_flush();
 		flush();
 	}

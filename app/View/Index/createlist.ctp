@@ -7,13 +7,13 @@
 <body>
 
 <script>
-function update_progress(step,total,message,type,url) {
-	console.log(step);
+function update_progress(step,total,message,type,data) {
+	console.log(data);
 	var percentage = (step/total)*100;
 	window.parent.updateProgressBar(percentage);
 	window.parent.updateProgressMessage(message,type);
 	if (type=="error" || type=="success") {
-		window.parent.finishCreateList(type,url);
+		window.parent.finishCreateList(type,data);
 	}
 }
 </script>

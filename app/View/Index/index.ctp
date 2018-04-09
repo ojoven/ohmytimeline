@@ -19,12 +19,12 @@
 	<iframe id="progress" name="progress"></iframe>
 
 	<div id="progress-render">
-		<span id="progress-message">
-			Progress
-		</span>
+		<span id="progress-message"></span>
 		<div id="progress-bar"></div>
 		<div class="clear"></div>
 	</div>
+
+	<a href="#" id="to-see-timeline" class="btn btn-main"><?php echo __("See my timeline!"); ?></a>
 
 <?php } else { ?>
 

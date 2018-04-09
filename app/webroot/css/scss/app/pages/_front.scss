@@ -6,6 +6,7 @@
 // CTA
 .cta {
 	width: 390px;
+	height: 104px;
 	max-width: 90%;
 	background: $white;
 	box-shadow: 0 4px 3px #ddd;
@@ -56,12 +57,13 @@
 	display: block;
 	padding: 15px 0;
 	width: 300px;
+
 	color: #444;
 	font-size: 14px;
 
 	&.progress {
-		background: $dodgerBlue;
-		color: $white;
+		background: $white;
+		color: $queenBlue;
 	}
 	&.error {
 		background: #FF7256;
@@ -75,6 +77,10 @@
 			background: #71b950;
 		}
 	}
+}
+
+#to-see-timeline {
+	display: none;
 }
 
 // ADDITIONAL INFORMATION

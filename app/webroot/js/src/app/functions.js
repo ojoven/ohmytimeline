@@ -1,8 +1,9 @@
 /** FORM **/
 var ableToSend = true;
 
-var $progressMessage = $("#progress-message" ),
-	$avatarContainer = $('.avatar-container' ),
+var $progressMessage = $("#progress-message"),
+	$seeTimelineButton = $("#to-see-timeline"),
+	$avatarContainer = $('.avatar-container'),
 	$checkbox = $('#follow');
 
 $(function() {
@@ -72,24 +73,28 @@ function updateProgressBar(percentage) {
 	$("#progress-bar").css('width',percentage+"%");
 }
 
-function updateProgressMessage(message,type) {
+function updateProgressMessage(message, type) {
 	$progressMessage.text(message);
 	$progressMessage.removeClass();
 	$progressMessage.addClass(type);
 }
 
-function finishCreateList(type,url) {
+function finishCreateList(type, data) {
+	console.log(data);
 	ableToSend = true;
 
 	if (type=="error") {
 		$("#progress-bar").css('width',"0");
 	}
 
-	if (type=="success" && url != "") {
-		$("#username,.username").val('');
-		$progressMessage.on('click',function() {
-			window.open(url, "_blank");
-		});
+	if (type=="success" && data.url != "") {
+		setTimeout(function() {
+			$('#progress-render').fadeOut(500, function() {
+				$seeTimelineButton.attr('href', data.url);
+				$seeTimelineButton.fadeIn();
+			});
+		}, 2000);
+
 	}
 
 }
