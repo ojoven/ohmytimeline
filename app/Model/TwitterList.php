@@ -12,7 +12,7 @@ class TwitterList extends AppModel {
 	const NUM_TRIES_QUICK = 1;
 
 	public $numTries;
-	public $totalSteps = 10;
+	public $totalSteps = 20;
 	public $credentials;
 	public $step;
 
@@ -24,7 +24,7 @@ class TwitterList extends AppModel {
 		// Start Progress
 		$this->startProgress();
 
-		$testFrontend = true;
+		$testFrontend = false;
 
 		// TODO: We need to check if the system has already created a list for the user
 		// We may do this here or before clicking on the button, probably
@@ -60,8 +60,8 @@ class TwitterList extends AppModel {
 			$this->addUsersToListOnTwitter($connection, $list, $followingIds);
 
 			// Finish!
-			$listUrl = "https://twitter.com/" . $list->user->screen_name . "/lists/" . $list->slug;
-			$this->setUpdateProgress($this->step + 1, __("List created! Click here to see it."), 'success', $listUrl);
+			$data = array('url' => "/list/" . $list->user->screen_name . "/" . $list->slug);
+			$this->setUpdateProgress($this->totalSteps, __("Success!"), 'success', $data);
 
 		} catch (Exception $e) {
 
@@ -77,13 +77,12 @@ class TwitterList extends AppModel {
 		sleep(1);
 		$this->setUpdateProgress(2, __("Test 2"));
 		sleep(1);
-		$this->setUpdateProgress(3, __("Test 3"));
+		$this->setUpdateProgress(3.5, __("Test 3"));
 		sleep(1);
-		$this->setUpdateProgress(3, __("Test 4"));
+		$this->setUpdateProgress(5.8, __("Test 4"));
 		sleep(1);
 		$data = array(
 			'url' => '/',
-			'url_auxiliar' => 'https://ohmytimeline.local.host/asdfasdf',
 		);
 		$this->setUpdateProgress($this->totalSteps, __("Success!"), 'success', $data);
 
@@ -180,6 +179,7 @@ class TwitterList extends AppModel {
 		$counterChunks = count($followingIdsChunked);
 
 		$this->step = 5;
+		$this->totalSteps = $this->step + $counterChunks;
 
 		foreach ($followingIdsChunked as $index => $chunk) {
 
@@ -274,6 +274,16 @@ class TwitterList extends AppModel {
 		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . json_encode($data) . "')</script>" . str_repeat(" ", 1000);
 		ob_flush();
 		flush();
+	}
+
+	/** GET LISTS **/
+	public function getListsUser($user) {
+
+		$connection = $this->getConnection($user->id, false);
+		$query = $connection->get('lists/ownerships', array('count' => 1000, 'user_id' => $user->id));
+		$lists = $query->lists;
+		return $lists;
+
 	}
 
 	/** PLAYGROUND **/

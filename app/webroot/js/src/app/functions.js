@@ -50,8 +50,8 @@ function sendForm() {
 		return false;
 	});
 
-	if (authenticated) {
-		//submitForm();
+	if (authenticated && fromAuthorized) {
+		submitForm();
 	}
 
 }
@@ -80,7 +80,7 @@ function updateProgressMessage(message, type) {
 }
 
 function finishCreateList(type, data) {
-	console.log(data);
+
 	ableToSend = true;
 
 	if (type=="error") {

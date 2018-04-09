@@ -113,3 +113,7 @@
  	-->
 
 </main>
+
+<script type="text/javascript">
+	fromAuthorized = <?php echo (isset($fromAuthorized) && $fromAuthorized) ? "true" : "false"; ?>;
+</script>

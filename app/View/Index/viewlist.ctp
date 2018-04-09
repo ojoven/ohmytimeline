@@ -2,7 +2,7 @@
 
 	<span class="title">Add this page to your home screen and you'll be in your OMT timeline list in a single click.</span>
 
-	Once it's added, it's time to enjoy...
+	<span class="subtitle">Once it's added, it's time to enjoy...</span>
 
 	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();">Go to My Timeline!</a>
 

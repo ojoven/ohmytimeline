@@ -9,23 +9,61 @@ class IndexController extends AppController {
 	/** INDEX **/
 	public function index() {
 
-		if ($this->_isNotAuthorizedFromTwitter()) {
-			$this->Session->destroy();
-		}
-
-		$this->_setAuthenticated();
+		$this->clearSessionIfIsNotAuthorizedFromTwitter();
+		$authenticated = $this->_setAuthenticated();
+		$this->_redirectIfAlreadyOMTListCreated($authenticated);
+		$this->_setFromAuthorized();
+		return false;
 
 	}
 
 	private function _setAuthenticated() {
-		$connection = $this->TwitterList->getConnection();
-		if ($connection) {
-			$this->set('authenticated',true);
-			$user = $this->Session->read('user');
-			$this->set('user', $user);
-		} else {
-			$this->set('authenticated',false);
+		$authenticated = false;
+		$user = $this->Session->read('user'); // We'll first check if the user is logged in OMT
+		if ($user) {
+			$connection = $this->TwitterList->getConnection();
+			if ($connection) {
+				$authenticated = true;
+				$this->set('user', $user);
+			} else {
+				$this->Session->destroy();
+				$this->set('authenticated', false);
+			}
 		}
+
+		$this->set('authenticated', $authenticated);
+		return $authenticated;
+	}
+
+	private function _setFromAuthorized() {
+
+		$this->set('fromAuthorized', $this->Session->read('fromAuthorized'));
+		$this->Session->delete('fromAuthorized');
+	}
+
+	private function _redirectIfAlreadyOMTListCreated($authenticated) {
+
+		if ($authenticated) {
+
+			$user = $this->Session->read('user');
+			$this->loadModel('User');
+			$userDB = $this->User->findByUserId($user->id);
+			$username = $userDB['User']['username'];
+			$listSlug = $userDB['User']['omt_list_slug'];
+			$listId = $userDB['User']['omt_list_id'];
+
+			$this->loadModel('TwitterList');
+			$lists = $this->TwitterList->getListsUser($user);
+			foreach ($lists as $list) {
+				if ($list->id_str === $listId) {
+
+					// Redirect to view list page
+					$url = '/list/' . $username . '/' . $listSlug;
+					$this->redirect(Router::url($url));
+				}
+			}
+		}
+
 	}
 
 	/** VIEW **/
@@ -95,6 +133,9 @@ class IndexController extends AppController {
 		/* If HTTP response is 200 continue otherwise send to connect page to retry */
 		if (200 == $connection->http_code) {
 
+			// Let the system know that we come from authorized page to automatically trigger the list creation
+			$this->Session->write('fromAuthorized', true);
+
 			// Get the Twitter user information
 			$user = $connection->get('account/verify_credentials');
 
@@ -152,9 +193,11 @@ class IndexController extends AppController {
 	}
 
 	// AUXILIAR
-	private function _isNotAuthorizedFromTwitter() {
+	private function clearSessionIfIsNotAuthorizedFromTwitter() {
 
-		return (isset($this->request->query['not_authorized']));
+		if (isset($this->request->query['not_authorized'])) {
+			$this->Session->destroy();
+		}
 
 	}
 }

@@ -8,6 +8,7 @@
 
 <script>
 function update_progress(step,total,message,type,data) {
+	data = JSON.parse(data);
 	console.log(data);
 	var percentage = (step/total)*100;
 	window.parent.updateProgressBar(percentage);
