@@ -1,0 +1,26 @@
+// ==============================================
+// VIEW LIST PAGE
+// ==============================================
+// Custom styles applied to the view list page
+
+.view-list-page {
+
+	padding: 50px;
+	color: #444;
+
+	a {
+		color: #444;
+	}
+
+	.disclaimer {
+		font-size: 12px;
+	}
+}
+
+// ==============================================
+// MOBILE
+// ==============================================
+
+@include mobile {
+
+}

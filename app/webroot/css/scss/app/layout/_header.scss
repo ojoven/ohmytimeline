@@ -6,7 +6,6 @@
 
 	width: 100%;
 	text-align: center;
-	padding-bottom: 70px;
 
 	// Main title
 	h1 {
@@ -22,6 +21,14 @@
 			width: 0;
 		}
 	}
+
+}
+
+// HERO
+.hero {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 70px;
 
 	// Big description
 	h2 {
@@ -49,7 +56,6 @@
 			margin-bottom: 10px;
 		}
 	}
-
 }
 
 // LOGGED IN

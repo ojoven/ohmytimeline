@@ -22,10 +22,20 @@ class IndexController extends AppController {
 		if ($connection) {
 			$this->set('authenticated',true);
 			$user = $this->Session->read('user');
-			$this->set('user',$user);
+			$this->set('user', $user);
 		} else {
 			$this->set('authenticated',false);
 		}
+	}
+
+	/** VIEW **/
+	public function viewlist() {
+
+		$user = $this->request->params['user'];
+		$slug = $this->request->params['slug'];
+
+		$this->set('user', $user);
+		$this->set('slug', $slug);
 	}
 
 	/** LOGOUT **/

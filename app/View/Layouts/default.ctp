@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<?php $title = __("Oh, my Timeline! | Bring back your Twitter TL");
+	<?php $title = __("Oh My Timeline! | Bring back your Twitter TL");
 	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted."); ?>
 	<title><?php echo $title; ?></title>
 
@@ -22,8 +22,8 @@
 
 	<!-- Le CDNs -->
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Londrina+Solid|Titillium+Web" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Arvo|Cabin|Josefin+Sans|Nunito|Poppins|Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Titillium+Web" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=Londrina+Solid|Arvo|Josefin+Sans|Nunito|Poppins|Raleway" rel="stylesheet">-->
 	<!--<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One|Open+Sans:400,700|Droid+Sans" rel="stylesheet">-->
 
 	<!-- Le icons -->
@@ -42,7 +42,7 @@
 <!-- HEADER -->
 <header id="main-header">
 
-	<?php if ($authenticated) {?>
+	<?php if (isset($authenticated) && $authenticated) {?>
 		<div class="container">
 			<div class="menu">
 				<a href="<?php echo Router::url("/api/logout")?>" id="logout" class="menu-option">
@@ -54,77 +54,10 @@
 
 	<h1>O<span class="disappear">h </span>M<span class="disappear">y </span>T<span class="disappear">imeline</span>!</h1>
 
-	<h2 class="big-description">
-		Bring back your <br class="just-mobile">Twitter Timeline.<br>
-	</h2>
-
-	<h3>
-		<?php echo __("1. We create a Twitter list with the people you follow and 2. You add a direct link to the list on your mobile screen. That easy."); ?>
-	</h3>
-
-	<ul class="main-features fa-ul">
-		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No ads"); ?></li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No \"you may have missed\" tweets"); ?></li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Only the tweets you ❤ sorted in real time"); ?></li>
-	</ul>
-
 </header>
 
-<!-- MAIN CONTENT -->
-<main id="main-container">
-
-	<!-- CTA -->
-	<section class="cta">
-
-		<!-- CONTENT -->
-		<?php echo $this->fetch('content'); ?>
-
-		<!-- DISCLAIMER -->
-		<div class="disclaimer">
-			*You'll be redirected to sign in with Twitter<br>
-			[No automatic tweets nor spam, just one thing*]
-		</div>
-
-	</section>
-
-	<!-- ADDITIONAL INFORMATION -->
-	<section class="author">
-
-		<div class="container">
-
-			<div class="avatar-container">
-				<img src="<?php echo Router::url("/") ?>img/avatars/avatar_happy_1.jpg" />
-				<img src="<?php echo Router::url("/") ?>img/avatars/avatar_happy_1.jpg" />
-			</div>
-
-			<div class="follow-container">
-				<h3>
-					<?php echo __("This is a side project<br> made by @lindydeveloper"); ?>
-				</h3>
-				<h4>
-					<input id="follow" name="follow" type="checkbox" checked />
-					<label for="follow"><?php echo __("*Follow me on Twitter"); ?></label>
-					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and <span class='highlighted'>to let me know<br> how Oh My Timeline! works for you!</span>"); ?></p>
-				</h4>
-			</div>
-
-		</div>
-
-	</section>
-
-	<!-- NUMBER OF TIMELINES BROUGHT BACK
-	<section class="numbers">
-
-		<div class="main">
-			<span class="number">210</span>
-			<span class="message">timelines brought back!</span>
-		</div>
-
-	</section>
- 	-->
-
-</main>
+<!-- CONTENT -->
+<?php echo $this->fetch('content'); ?>
 
 <!-- FOOTER -->
 <footer>
@@ -134,7 +67,7 @@
 <!-- JS -->
 <script type="text/javascript">
 	urlBase = "<?php echo Router::url("/");?>";
-	authenticated = <?php echo ($authenticated) ? "true" : "false"; ?>;
+	authenticated = <?php echo (isset($authenticated) && $authenticated) ? "true" : "false"; ?>;
 </script>
 
 <script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
