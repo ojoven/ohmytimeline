@@ -77,22 +77,6 @@
 	<!-- CTA -->
 	<section class="cta">
 
-		<?php /**
-		<!-- FOLLOW -->
-		<div class="message">
-			<?php echo __("To be aware of my other side projects and enjoy tweets and memes about UX, products, etc. why don't you also...?"); ?>
-		</div>
-
-		<div class="follow">
-			<img src="<?php echo Router::url("/") ?>img/twitter_sad.jpg">
-
-			<div class="form-checkbox">
-				<input id="follow-check" type="checkbox" />
-				<label for="follow-check">Follow me</label>
-			</div>
-		</div>
-		**/ ?>
-
 		<!-- CONTENT -->
 		<?php echo $this->fetch('content'); ?>
 
@@ -121,7 +105,7 @@
 				<h4>
 					<input id="follow" name="follow" type="checkbox" checked />
 					<label for="follow"><?php echo __("*Follow me on Twitter"); ?></label>
-					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and to let me know<br> how Oh My Timeline works for you!"); ?></p>
+					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and <span class='highlighted'>to let me know<br> how Oh My Timeline! works for you!</span>"); ?></p>
 				</h4>
 			</div>
 

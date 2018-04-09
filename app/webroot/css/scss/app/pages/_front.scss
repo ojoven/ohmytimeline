@@ -17,34 +17,6 @@
 	left: 50%;
 	@include translateX(-50%);
 
-	.message {
-		font-size: 12px;
-	}
-
-	.follow {
-
-		margin-top: 10px;
-		margin-left: 71px;
-
-		img {
-			width: 40px;
-			float: left;
-			border-radius: 8px;
-			margin: 0 15px 0 12px;
-		}
-
-		.form-checkbox {
-			float: left;
-			position: relative;
-			top: 10px;
-		}
-		#follow-check {
-			+ label {
-				font-size: 14px;
-			}
-		}
-	}
-
 	.disclaimer {
 		position: absolute;
 		bottom: -36px;
@@ -68,7 +40,7 @@
 #progress-render {
 	display: none;
 	width: 300px;
-	margin: 15px auto;
+	margin: 30px auto;
 }
 
 #progress-bar {
@@ -114,8 +86,8 @@
 	// Avatar
 	.avatar-container {
 		margin: 0 auto 15px;
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 
 		img {
 			@include transition(opacity .3s ease);
@@ -123,7 +95,7 @@
 			position: absolute;
 			top: 0;
 			left: 50%;
-			width: 120px;
+			width: 100px;
 			border-radius: 50%;
 
 			&:last-child {
@@ -136,16 +108,26 @@
 	// Title
 	h3 {
 		color: $queenBlue;
-		font-size: 26px;
+		font-size: 20px;
 		margin-bottom: 10px;
+	}
+
+	// Checkbox
+	label {
+		font-size: 16px;
 	}
 
 	// Description
 	p {
 		padding: 0 10px;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 1.2;
 		color: #444;
+
+		.highlighted {
+			color: #666;
+			font-weight: bold;
+		}
 	}
 
 }

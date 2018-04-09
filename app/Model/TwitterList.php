@@ -24,7 +24,7 @@ class TwitterList extends AppModel {
 		// Start Progress
 		$this->startProgress();
 
-		$testFrontend = false;
+		$testFrontend = true;
 
 		// TODO: We need to check if the system has already created a list for the user
 		// We may do this here or before clicking on the button, probably
