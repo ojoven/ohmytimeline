@@ -54,5 +54,8 @@ class AppController extends Controller {
 
 	public function beforeFilter() {
 
+		$language = Configure::read('Config.language');
+		Configure::write('Config.language', 'spa');
+		$this->Session->write('Config.language', 'spa');
 	}
 }

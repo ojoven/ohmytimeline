@@ -76,7 +76,7 @@
 
 <!-- FOOTER -->
 <footer>
-	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/ojoven'>@lindydeveloper</a>"); ?></span>
+	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/lindydeveloper'>@lindydeveloper</a>"); ?></span>
 </footer>
 
 <!-- JS -->

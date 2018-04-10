@@ -73,13 +73,13 @@ class TwitterList extends AppModel {
 
 	private function testFrontend() {
 
-		$this->setUpdateProgress(1, __("Test 1"));
+		$this->setUpdateProgress(1, "Test 1");
 		sleep(1);
-		$this->setUpdateProgress(2, __("Test 2"));
+		$this->setUpdateProgress(2, "Test 2");
 		sleep(1);
-		$this->setUpdateProgress(3.5, __("Test 3"));
+		$this->setUpdateProgress(3.5, "Test 3");
 		sleep(1);
-		$this->setUpdateProgress(5.8, __("Test 4"));
+		$this->setUpdateProgress(5.8, "Test 4");
 		sleep(1);
 		$data = array(
 			'url' => '/',

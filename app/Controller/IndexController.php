@@ -13,7 +13,6 @@ class IndexController extends AppController {
 		$authenticated = $this->_setAuthenticated();
 		$this->_redirectIfAlreadyOMTListCreated($authenticated);
 		$this->_setFromAuthorized();
-		return false;
 
 	}
 
@@ -69,11 +68,13 @@ class IndexController extends AppController {
 	/** VIEW **/
 	public function viewlist() {
 
-		$user = $this->request->params['user'];
+		$user = $this->request->params['username'];
 		$slug = $this->request->params['slug'];
 
-		$this->set('user', $user);
+		$this->set('username', $user);
 		$this->set('slug', $slug);
+
+		$this->_setAuthenticated();
 	}
 
 	/** LOGOUT **/

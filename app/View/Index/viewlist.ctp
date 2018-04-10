@@ -1,16 +1,16 @@
 <main id="main-container" class="view-list-page">
 
-	<span class="title">Add this page to your home screen and you'll be in your OMT timeline list in a single click.</span>
+	<span class="title"><?php echo __("Add this page to your home screen and you'll be in your OMT timeline list in a single click."); ?></span>
 
-	<span class="subtitle">Once it's added, it's time to enjoy...</span>
+	<span class="subtitle"><?php echo __("Once it's added, it's time to enjoy..."); ?></span>
 
-	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();">Go to My Timeline!</a>
+	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
 
 	<div class="disclaimer">
-		If you're in the desktop or prefer to link to the list via browser URL you can go to the list through:
+		<?php echo __("If you're in the desktop or prefer to link to the list via browser URL you can go to the list through:"); ?>
 		<br>
-		<a target="_blank" href="https://twitter.com/<?php echo $user; ?>/lists/<?php echo $slug; ?>">
-			https://twitter.com/<?php echo $user; ?>/lists/<?php echo $slug; ?>
+		<a target="_blank" href="https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>">
+			https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>
 		</a>
 	</div>
 
@@ -18,7 +18,7 @@
 
 	<script>
 
-		var urlTwitterApp = 'twitter://list?screen_name=<?php echo $user; ?>&slug=<?php echo $slug; ?>';
+		var urlTwitterApp = 'twitter://list?screen_name=<?php echo $username; ?>&slug=<?php echo $slug; ?>';
 
 		var added = Cookies.get('added');
 		if (added) {
