@@ -26,13 +26,13 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
-  `omt_list_id` int(11) DEFAULT NULL,
+  `omt_list_id` varchar(128) DEFAULT NULL,
   `omt_list_slug` varchar(64) DEFAULT NULL,
   `oauth_token` text NOT NULL,
   `oauth_token_secret` text NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-06 20:29:20
+-- Dump completed on 2018-04-10 12:48:29
