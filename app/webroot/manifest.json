@@ -1,5 +1,8 @@
 {
  "name": "OMT!",
+ "display": "standalone",
+ "manifest_version": 1,
+ "background_color": "#445E93",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
