@@ -76,3 +76,15 @@
   75% { @include translate3d(0,5px,0); }
   100% { @include translate3d(0,0,0); }
 }
+
+// FadeInUp
+@include keyframe(fadeInUp) {
+  0% {
+    opacity: 0;
+    @include translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
+}

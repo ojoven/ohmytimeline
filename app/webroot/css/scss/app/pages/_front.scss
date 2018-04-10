@@ -116,6 +116,15 @@
 		color: $queenBlue;
 		font-size: 20px;
 		margin-bottom: 10px;
+
+		a {
+			color: $queenBlue;
+			text-decoration: none;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	// Checkbox

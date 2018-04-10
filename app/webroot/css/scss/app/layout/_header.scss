@@ -30,6 +30,25 @@
 	text-align: center;
 	padding-bottom: 70px;
 
+	// Twitter birds
+	.twitter-bird {
+		position: absolute;
+		top: 18vw;
+		left: 5%;
+		background: url(../img/twitter-bird.png) 0 0 no-repeat;
+		background-size: contain;
+		width: 390px;
+		height: 520px;
+		opacity: 0.2;
+
+		&.bird-2 {
+			top: 10vw;
+			left: auto;
+			right: 5%;
+			@include transform(scaleX(-1));
+		}
+	}
+
 	// Big description
 	h2 {
 		margin: 40px 0 20px;
@@ -111,6 +130,16 @@
 		.main-features {
 			margin: 30px 60px;
 			font-size: 4.4vw;
+		}
+	}
+
+	.hero {
+
+		.twitter-bird {
+			&.bird-1, &.bird-2 {
+				top: 23vw;
+				width: 12vw;
+			}
 		}
 	}
 

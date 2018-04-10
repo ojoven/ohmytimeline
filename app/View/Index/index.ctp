@@ -88,7 +88,7 @@
 
 			<div class="follow-container">
 				<h3>
-					<?php echo __("This is a side project<br> made by @lindydeveloper"); ?>
+					<?php echo __("Hey, this is my side project<br> and I'm <a target='_blank' href='https://twitter.com/lindydeveloper'>@lindydeveloper</a>"); ?>
 				</h3>
 				<h4>
 					<input id="follow" name="follow" type="checkbox" checked />
