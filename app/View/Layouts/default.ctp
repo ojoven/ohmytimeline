@@ -12,10 +12,10 @@
 	<meta name="description" content="<?php echo $description; ?>">
 	<meta property="og:title" content="<?php echo $title; ?>"/>
 	<meta property="og:description" content="<?php echo $description; ?>" />
-	<meta property="og:site_name" content="realtl.io"/>
+	<meta property="og:site_name" content="http://ohmytimeline.com"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:url" content="<?php echo Router::url("/",true); ?>"/>
-	<meta property="og:image" content="<?php echo Router::url("/img/who-influences-logo-square.png",true)?>"/>
+	<meta property="og:image" content="<?php echo Router::url("/img/omt_square-3.png",true)?>"/>
 
 	<!-- Le styles -->
 	<link rel="stylesheet" type="text/css" href="/css/style.css?v=<?php echo Functions::majestic_get_current_version('css'); ?>">

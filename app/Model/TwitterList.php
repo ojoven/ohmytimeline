@@ -21,13 +21,11 @@ class TwitterList extends AppModel {
 	/** CREATE LIST **/
 	public function createList() {
 
-		// Start Progress
-		$this->startProgress();
-
 		$testFrontend = false;
-
-		// TODO: We need to check if the system has already created a list for the user
-		// We may do this here or before clicking on the button, probably
+		if ($testFrontend) {
+			$this->testFrontend();
+			return false;
+		}
 
 		try {
 
@@ -35,11 +33,6 @@ class TwitterList extends AppModel {
 			$user = $this->getUserFromSession();
 			$userId = $user->id;
 			$username = $user->screen_name;
-
-			if ($testFrontend) {
-				$this->testFrontend();
-				return false;
-			}
 
 			// Get connection to Twitter API
 			$connection = $this->getConnection($userId, true);
@@ -85,6 +78,7 @@ class TwitterList extends AppModel {
 			'url' => '/',
 		);
 		$this->setUpdateProgress($this->totalSteps, __("Success!"), 'success', $data);
+		return false;
 
 	}
 
@@ -251,7 +245,7 @@ class TwitterList extends AppModel {
 	}
 
 	/** FLUSH **/
-	private function startProgress() {
+	public function startProgress() {
 
 		ob_start();
 		set_time_limit(0);
@@ -259,9 +253,7 @@ class TwitterList extends AppModel {
 		@apache_setenv('no-gzip', 1);
 		@ini_set('zlib.output_compression', 0);
 		@ini_set('implicit_flush', 1);
-		for ($i = 0; $i < ob_get_level(); $i++) {
-			ob_end_flush();
-		}
+		for ($i = 0; $i < ob_get_level(); $i++) { ob_end_flush(); }
 		ob_implicit_flush(1);
 
 	}
@@ -271,7 +263,9 @@ class TwitterList extends AppModel {
 	}
 
 	private function setUpdateProgress($partial, $message, $type = "progress", $data = null) {
-		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . json_encode($data) . "')</script>" . str_repeat(" ", 1000);
+		echo "update progress " . $partial;
+		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . json_encode($data) . "')</script>" .str_repeat(' ', 1000);
+		//echo "<script>console.log(1)</script>";
 		ob_flush();
 		flush();
 	}
@@ -281,7 +275,7 @@ class TwitterList extends AppModel {
 
 		$connection = $this->getConnection($user->id, false);
 		$query = $connection->get('lists/ownerships', array('count' => 1000, 'user_id' => $user->id));
-		$lists = $query->lists;
+		$lists = isset($query->lists) ? $query->lists : array();
 		return $lists;
 
 	}

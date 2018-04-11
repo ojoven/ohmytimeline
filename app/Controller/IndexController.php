@@ -47,12 +47,14 @@ class IndexController extends AppController {
 			$user = $this->Session->read('user');
 			$this->loadModel('User');
 			$userDB = $this->User->findByUserId($user->id);
+			if (!$userDB) return false;
 			$username = $userDB['User']['username'];
 			$listSlug = $userDB['User']['omt_list_slug'];
 			$listId = $userDB['User']['omt_list_id'];
 
 			$this->loadModel('TwitterList');
 			$lists = $this->TwitterList->getListsUser($user);
+			if (!$lists) return false;
 			foreach ($lists as $list) {
 				if ($list->id_str === $listId) {
 
@@ -175,8 +177,10 @@ class IndexController extends AppController {
 	public function createlist() {
 
 		$user = $this->Session->read('user');
-		$this->set('username', $user->screen_name);
-		$this->set('userId', $user->id);
+		if ($user) {
+			$this->set('username', $user->screen_name);
+			$this->set('userId', $user->id);
+		}
 		$this->autoLayout = false;
 	}
 
