@@ -23,8 +23,6 @@
 	<!-- Le CDNs -->
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Titillium+Web" rel="stylesheet">
-	<!--<link href="https://fonts.googleapis.com/css?family=Londrina+Solid|Arvo|Josefin+Sans|Nunito|Poppins|Raleway" rel="stylesheet">-->
-	<!--<link href="https://fonts.googleapis.com/css?family=Cookie|Kaushan+Script|Londrina+Solid|Nanum+Pen+Script|Passion+One|Open+Sans:400,700|Droid+Sans" rel="stylesheet">-->
 
 	<!-- Le icons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
