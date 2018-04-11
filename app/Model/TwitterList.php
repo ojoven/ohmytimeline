@@ -126,7 +126,7 @@ class TwitterList extends AppModel {
 
 	private function createListOnTwitter($connection) {
 
-		$publicList = true;
+		$publicList = false;
 
 		$params['name'] = __("Oh My Timeline!");
 		$params['description'] = "No ads, no algorithms, just my clean TL - Create yours at https://ohmytimeline.com";
