@@ -56,25 +56,67 @@
 	}
 
 	// Little description
-	h3 {
+	.little-description {
+		position: relative;
 		width: 390px;
 		max-width: 90%;
+		margin: 10px auto 0;
+	}
+
+	.additional-info {
+		position: absolute;
+		right: -7px;
+		top: -5px;
+
+		.tooltip {
+			position: absolute;
+			left: -10px;
+			top: 56px;
+			width: 122px;
+			font-size: 12px;
+		}
+
+		.arrow {
+			position: absolute;
+			margin: 0 auto;
+			background: url(../img/arrow.png) no-repeat 0 0;
+			background-size: contain;
+			width: 60px;
+			height: 224px;
+		}
+	}
+
+	h3 {
 		font-weight: normal;
 		font-size: 16px;
-		margin: 10px 0 0;
 		display: inline-block;
+
+		.to-tip {
+			text-decoration: none;
+			border-bottom: 1px dotted $white;
+		}
+	}
+
+	// Features
+	h4 {
+		width: 320px;
+		max-width: 90%;
+		font-size: 16px;
+		margin: 20px auto 10px;
+		text-align: left;
 	}
 
 	.main-features {
 		width: 320px;
 		max-width: 90%;
-		margin: 30px auto;
+		margin: 0 auto 30px;
 		text-align: left;
 
 		li {
 			margin-bottom: 10px;
 		}
 	}
+
 }
 
 // LOGGED IN

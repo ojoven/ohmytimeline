@@ -5,10 +5,24 @@
 		Bring back your <br class="just-mobile">Twitter Timeline.<br>
 	</h2>
 
-	<h3>
-		<?php echo __("1. We create a Twitter list with the people you follow and 2. You add a direct link to the list on your mobile screen. That easy."); ?>
-	</h3>
+	<div class="little-description">
 
+		<h3>
+			<?php echo __("Oh My Timeline! is a simple app that creates a Twitter list with the people you follow and keeps it synchronized."); ?>
+		</h3>
+		<div class="additional-info">
+			<div class='tooltip'>
+				Don't like or use lists?<br>
+				No worries, with a direct access in the home screen it feels like your real Timeline!
+			</div>
+			<div class="arrow">
+				<div class="curve"></div>
+				<div class="point"></div>
+			</div>
+		</div>
+	</div>
+
+	<h4><?php echo __("Browse your Twitter Timeline with..."); ?></h4>
 	<ul class="main-features fa-ul">
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No ads"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>

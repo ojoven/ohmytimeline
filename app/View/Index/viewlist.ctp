@@ -2,8 +2,6 @@
 
 	<span class="title"><?php echo __("Add this page to your home screen and you'll be in your OMT timeline list in a single click."); ?></span>
 
-	<span class="subtitle"><?php echo __("Once it's added, it's time to enjoy..."); ?></span>
-
 	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
 
 	<div class="disclaimer">
