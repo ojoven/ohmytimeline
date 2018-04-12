@@ -2,15 +2,15 @@
 <section class="hero">
 
 	<h2 class="big-description">
-		Bring back your <br class="just-mobile">Twitter Timeline.<br>
+		<?php echo __("Bring back your <br class='just-mobile'>Twitter Timeline."); ?>
 	</h2>
 
 	<div class="little-description">
 
 		<h3>
-			<?php echo __("Oh My Timeline! is a simple app that creates a Twitter list with the people you follow and keeps it synchronized."); ?>
+			<?php echo __("Oh My Timeline! is a simple app that creates a Twitter list with the people you follow and keeps it synchronized. Browsing it is like browsing your timeline with..."); ?>
 		</h3>
-		<div class="additional-info">
+		<div class="additional-info" style="display:none;">
 			<div class='tooltip'>
 				Don't like or use lists?<br>
 				No worries, with a direct access in the home screen it feels like your real Timeline!
@@ -22,7 +22,6 @@
 		</div>
 	</div>
 
-	<h4><?php echo __("Browse your Twitter Timeline with..."); ?></h4>
 	<ul class="main-features fa-ul">
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No ads"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>
@@ -84,8 +83,8 @@
 
 		<!-- DISCLAIMER -->
 		<div class="disclaimer">
-			*You'll be redirected to sign in with Twitter<br>
-			[No automatic tweets nor spam, just one thing*]
+			<?php echo __("*You'll be redirected to sign in with Twitter<br>"); ?>
+			<?php echo __("[No automatic tweets nor spam, just one thing*]"); ?>
 		</div>
 
 	</section>
@@ -120,7 +119,7 @@
 
 		<div class="main">
 			<span class="number">210</span>
-			<span class="message">timelines brought back!</span>
+			<span class="message"><?php echo __("timelines brought back!"); ?></span>
 		</div>
 
 	</section>

@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oh My Timeline\n"
+"POT-Creation-Date: 2018-04-12 12:11+0100\n"
+"PO-Revision-Date: 2018-04-12 12:29+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <mikeltorresmail@gmail.com>\n"
+"Language: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../app/Model\n"
+"X-Poedit-SearchPath-1: ../app/View\n"
+
+#: ../app/Model/TwitterList.php:57 ../app/Model/TwitterList.php:80
+msgid "Success!"
+msgstr "¡Lista creada!"
+
+#: ../app/Model/TwitterList.php:88
+msgid ""
+"There was a problem with getting the user from the session. Please reload "
+"the page."
+msgstr ""
+"Hubo un problema trayendo al usuario de la sesión. Por favor, recarga la "
+"página."
+
+#: ../app/Model/TwitterList.php:113
+msgid "Retrieving users..."
+msgstr "Comprobando usuarios..."
+
+#: ../app/Model/TwitterList.php:121
+msgid "We couldn't retrieve following user ids."
+msgstr "No pudimos recoger los ids de los usuarios."
+
+#: ../app/Model/TwitterList.php:131
+msgid "Oh My Timeline!"
+msgstr "Oh My Timeline!"
+
+#: ../app/Model/TwitterList.php:134
+msgid "Creating list..."
+msgstr "Creando lista..."
+
+#: ../app/Model/TwitterList.php:146
+msgid "Mmmm, error! Maybe too many lists?: "
+msgstr "Mmmmm, error! ¿Quizás demasiadas listas?"
+
+#: ../app/Model/TwitterList.php:146
+msgid ". Please wait some minutes."
+msgstr ". Por favor, espera unos minutos."
+
+#: ../app/Model/TwitterList.php:148
+msgid "There was a problem creating the list: "
+msgstr "Hubo un problema creando la lista:"
+
+#: ../app/Model/TwitterList.php:180
+msgid "Adding users to list...(please wait)"
+msgstr "Añadiendo usuarios a la lista..."
+
+#: ../app/Model/TwitterList.php:197
+msgid "Connecting to Twitter..."
+msgstr "Conectando a Twitter..."
+
+#: ../app/Model/TwitterList.php:220
+msgid "There was a problem connecting to Twitter."
+msgstr "Hubo un problema al conectarse a Twitter"
+
+#: ../app/Model/TwitterList.php:235
+msgid "Verifying credentials..."
+msgstr "Verificando credenciales..."
+
+#: ../app/View/Layouts/default.ctp:7
+msgid "Oh My Timeline! | Bring back your Twitter TL"
+msgstr "Oh My Timeline! | Tu TL de Twitter ha vuelto."
+
+#: ../app/View/Layouts/default.ctp:8
+msgid ""
+"No ads, no faved tweets from people you follow, no suggestions. Your "
+"Timeline, clean and sorted."
+msgstr ""
+"Sin anuncios, sin tuits faveados de la gente que sigues, sin sugerencias. Tu "
+"Timeline, limpio y ordenado."
+
+#: ../app/View/Layouts/default.ctp:62
+msgid "Logout"
+msgstr "Salir"
+
+#: ../app/View/Layouts/default.ctp:77
+msgid ""
+"Made with ❤ by <a target='_blank' href='https://twitter.com/"
+"lindydeveloper'>@lindydeveloper</a>"
+msgstr ""
+"Hecho con ❤ por <a target='_blank' href='https://twitter.com/"
+"ojoven'>@ojoven</a>"
+
+#: ../app/View/Index/viewlist.ctp:3
+msgid ""
+"Add this page to your home screen and you'll be in your OMT timeline list in "
+"a single click."
+msgstr ""
+"Añade esta página a tu pantalla de inicio y accederás a tu timeline OMT! en "
+"un único click."
+
+#: ../app/View/Index/viewlist.ctp:5
+msgid "Go to My Timeline!"
+msgstr "¡Ir a mi timeline!"
+
+#: ../app/View/Index/viewlist.ctp:8
+msgid ""
+"If you're in the desktop or prefer to link to the list via browser URL you "
+"can go to the list through:"
+msgstr ""
+"Si estás en escritorio o prefieres un enlace via URL de navegador, puedes "
+"acceder a la lista desde:"
+
+#: ../app/View/Index/index.ctp:5
+msgid "Bring back your <br class='just-mobile'>Twitter Timeline."
+msgstr "Tu TL de Twitter <br class='just-mobile'>sin anuncios ni morralla."
+
+#: ../app/View/Index/index.ctp:11
+msgid ""
+"Oh My Timeline! is a simple app that creates a Twitter list with the people "
+"you follow and keeps it synchronized. Browsing it is like browsing your "
+"timeline with..."
+msgstr ""
+"Oh My Timeline! es una app sencilla que crea una lista de Twitter y la "
+"actualiza con las personas a las que sigues. Navegar por la lista es como "
+"navegar en tu timeline..."
+
+#: ../app/View/Index/index.ctp:26
+msgid "No ads"
+msgstr "Sin anuncios"
+
+#: ../app/View/Index/index.ctp:27
+msgid "No faved tweets from people you follow"
+msgstr "Sin favs de gente a la que sigues"
+
+#: ../app/View/Index/index.ctp:28
+msgid "No \"you may have missed\" tweets"
+msgstr "Sin secciones tipo \"por si te perdiste\""
+
+#: ../app/View/Index/index.ctp:29
+msgid "Only the tweets you ❤ sorted in real time"
+msgstr "Sólo los tuits que tú ❤ ordenados en tiempo real"
+
+#: ../app/View/Index/index.ctp:47 ../app/View/Index/index.ctp:72
+msgid "Bring back my Twitter TL!"
+msgstr "¡Quiero mi TL de vuelta!"
+
+#: ../app/View/Index/index.ctp:67
+msgid "See my timeline!"
+msgstr "Ver mi Timeline"
+
+#: ../app/View/Index/index.ctp:86
+msgid "*You'll be redirected to sign in with Twitter<br>"
+msgstr "*Tendrás que loguearte con Twitter<br> "
+
+#: ../app/View/Index/index.ctp:87
+msgid "[No automatic tweets nor spam, just one thing*]"
+msgstr "[Sin tuits automáticos o spam, sólo una cosa, si quieres*]"
+
+#: ../app/View/Index/index.ctp:104
+msgid ""
+"Hey, this is my side project<br> and I'm <a target='_blank' href='https://"
+"twitter.com/lindydeveloper'>@lindydeveloper</a>"
+msgstr ""
+"Hey, este es un proyecto personal<br> y yo soy <a target='_blank' "
+"href='https://twitter.com/ojoven'>@ojoven</a>"
+
+#: ../app/View/Index/index.ctp:108
+msgid "*Follow me on Twitter"
+msgstr "*Sígueme en Twitter"
+
+#: ../app/View/Index/index.ctp:109
+msgid ""
+"For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and "
+"<span class='highlighted'>to let me know<br> how Oh My Timeline! works for "
+"you!</span>"
+msgstr ""
+"Para tuits deliciosos sobre side projects,<br>creatividad, UX, MEMEs...y "
+"<span class='highlighted'>para hacerme saber<br> qué tal te funciona Oh My "
+"Timeline!</span>"
+
+#: ../app/View/Index/index.ctp:122
+msgid "timelines brought back!"
+msgstr "timelines traídos de vuelta!"
+
+#~ msgid "Browse your Twitter Timeline with..."
+#~ msgstr "Navega por tu Timeline de Twitter..."
+
+#~ msgid ""
+#~ "1. We create a Twitter list with the people you follow and 2. You add a "
+#~ "direct link to the list on your mobile screen. That easy."
+#~ msgstr ""
+#~ "1. Creamos una lista en Twitter con la gente que sigues y 2. Añades un "
+#~ "acceso directo a la lista en tu móvil. Así de sencillo."
+
+#~ msgid "This is a side project<br> made by @lindydeveloper"
+#~ msgstr "Este es un side project<br> hecho por @ojoven"
+
+#~ msgid "Once it's added, it's time to enjoy..."
+#~ msgstr "Una vez que lo hayas añadido, es tiempo de disfrutar..."

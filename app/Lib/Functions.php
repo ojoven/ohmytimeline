@@ -142,57 +142,6 @@ class Functions {
 		return $ISODateTime;
 	}
 
-	public static function ago($date) {
-
-		$str = strtotime(date($date));
-		$today = strtotime(date('Y-m-d H:i:s'));
-
-		// It returns the time difference in Seconds...
-		$time_differnce = $today - $str;
-
-		// To Calculate the time difference in Years...
-		$years = 60 * 60 * 24 * 365;
-
-		// To Calculate the time difference in Months...
-		$months = 60 * 60 * 24 * 30;
-
-		// To Calculate the time difference in Days...
-		$days = 60 * 60 * 24;
-
-		// To Calculate the time difference in Hours...
-		$hours = 60 * 60;
-
-		// To Calculate the time difference in Minutes...
-		$minutes = 60;
-
-		if (intval($time_differnce / $years) > 1) {
-			$datediff = __('%s years ago',intval($time_differnce / $years));
-		} else if (intval($time_differnce / $years) > 0) {
-			$datediff = __('%s year ago',intval($time_differnce / $years));
-		} else if (intval($time_differnce / $months) > 1) {
-			$datediff = __('%s months ago',intval($time_differnce / $months));
-		} else if (intval(($time_differnce / $months)) > 0) {
-			$datediff = __('%s month ago',intval($time_differnce / $months));
-		} else if (intval(($time_differnce / $days)) > 1) {
-			$datediff = __('%s days ago',intval($time_differnce / $days));
-		} else if (intval(($time_differnce / $days)) > 0) {
-			$datediff = __('%s day ago',intval($time_differnce / $days));
-		} else if (intval(($time_differnce / $hours)) > 1) {
-			$datediff = __('%s hours ago',intval($time_differnce / $hours));
-		} else if (intval(($time_differnce / $hours)) > 0) {
-			$datediff = __('%s hour ago',intval($time_differnce / $hours));
-		} else if (intval(($time_differnce / $minutes)) > 1) {
-			$datediff = __('%s minutes ago',intval($time_differnce / $minutes));
-		} else if (intval(($time_differnce / $minutes)) > 0) {
-			$datediff = __('%s minute ago',intval($time_differnce / $minutes));
-		} else if (intval(($time_differnce)) > 1) {
-			$datediff = __('%s seconds ago',intval($time_differnce));
-		} else {
-			$datediff = ' ' . __('few seconds ago');
-		}
-
-		return $datediff;
-	}
 
 	/** CURLS **/
 	public static function getUrl($url) {
@@ -294,6 +243,19 @@ class Functions {
 			$ipaddress = 'UNKNOWN';
 
 		return $ipaddress;
+	}
+
+	/** BROWSER LANGUAGE **/
+	public static function getBrowserLanguage() {
+
+		$lang2digits = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+		$lang3digits = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 3);
+		if ($lang2digits == 'es' || $lang2digits == 'ca' || $lang2digits == 'eu'
+		|| $lang3digits == 'ast' || $lang3digits == 'gal') {
+			return 'es';
+		}
+
+		return 'en';
 	}
 
 	/** VERSIONING / CACHE CLEAR **/
