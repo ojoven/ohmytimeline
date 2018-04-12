@@ -54,12 +54,12 @@ class AppController extends Controller {
 
 	public function beforeFilter() {
 
-		$defaultLanguage = 'en';
 		$allowedLanguages = array('en', 'es');
 		$urlLanguage = (isset($_GET['language']) && in_array($_GET['language'], $allowedLanguages)) ? $_GET['language'] : false;
 		$browserLanguage = Functions::getBrowserLanguage();
+		$isSpanishCountry = Functions::isSpanishTalkingCountry();
 
-		if ($browserLanguage == 'es' || $urlLanguage == 'es') {
+		if ($isSpanishCountry || $browserLanguage == 'es' || $urlLanguage == 'es') {
 			Configure::write('Config.language', 'spa');
 			$this->Session->write('Config.language', 'spa');
 		} else {

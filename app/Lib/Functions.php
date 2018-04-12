@@ -258,6 +258,34 @@ class Functions {
 		return 'en';
 	}
 
+	/** COUNTRY DETECT **/
+	public static function getCountryByIP($ip) {
+
+		$ip = (isset($_GET['ip'])) ? $_GET['ip'] : $ip;
+		$s = file_get_contents('http://ip2c.org/'.$ip);
+		switch($s[0]) {
+			case '1':
+				$reply = explode(';', $s);
+				return strtolower($reply[1]); // 2 digit code
+			case '0':
+			case '2':
+			default:
+				return false;
+		}
+	}
+
+	public static function isSpanishTalkingCountry() {
+
+		$ip = self::getRealIP();
+		$country = self::getCountryByIP($ip);
+		$spanishCountries = array(
+			'es', 'mx', 'co', 'ar', 'pe', 've', 'cl', 'ec', 'gt', 'cu', 'bo', 'do', 'hn', 'py', 'sv', 'ni', 'cr', 'pr', 'pa', 'uy', 'gq'
+		);
+
+		return ($country && in_array($country, $spanishCountries));
+
+	}
+
 	/** VERSIONING / CACHE CLEAR **/
 	public static function majestic_get_current_version($type) {
 
