@@ -1,6 +1,6 @@
 <main id="main-container" class="view-list-page">
 
-	<span class="title"><?php echo __("Add this page to your home screen and you'll be in your OMT timeline list in a single click."); ?></span>
+	<span class="title"><?php echo __("Add this page to your home screen <br class='hide-mobile'>and you'll be in your OMT timeline list <br class='hide-mobile'>in a single click."); ?></span>
 
 	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
 
@@ -21,6 +21,9 @@
 		var added = Cookies.get('added');
 		if (added) {
 			window.location.href = urlTwitterApp;
+			setInterval(function() {
+				window.location.href = urlTwitterApp;
+			}, 1000);
 		}
 
 		function addCookie() {

@@ -27,6 +27,7 @@
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No \"you may have missed\" tweets"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Only the tweets you ❤ sorted in real time"); ?></li>
+		<li><span class="fa-li"><i class="fab fa-twitter"></i></span><?php echo __("Specially recommended for you if using the official Twitter client or twitter.com!"); ?></li>
 	</ul>
 
 </section>
