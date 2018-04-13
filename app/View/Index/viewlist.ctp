@@ -1,15 +1,39 @@
 <main id="main-container" class="view-list-page">
 
-	<span class="title"><?php echo __("Add this page to your home screen <br class='hide-mobile'>and you'll be in your OMT timeline list <br class='hide-mobile'>in a single click."); ?></span>
+	<!-- MOBILE -->
+	<div class="just-mobile">
 
-	<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
+		<div class="header">
+			<span id="success-mobile" class="success"><?php echo __("List successfully created!"); ?></span>
+			<span class="supra-title"><?php echo __("But wait cause there's more..."); ?></span>
+			<p class="title"><?php echo __("Pro Tip: Add this page to your home screen and you'll be in your OMT timeline list in a single click."); ?></p>
+		</div>
 
-	<div class="disclaimer">
-		<?php echo __("If you're in the desktop or prefer to link to the list via browser URL you can go to the list through:"); ?>
-		<br>
-		<a target="_blank" href="https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>">
-			https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>
-		</a>
+		<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
+
+		<div class="disclaimer">
+			<?php echo __("If you'd like to access via browser, instead of Twitter app:"); ?>
+			<br>
+			<a target="_blank" href="https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>">
+				https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>
+			</a>
+		</div>
+
+	</div>
+
+	<!-- DESKTOP -->
+	<div class="hide-mobile">
+
+		<div class="header">
+			<span class="success"><?php echo __("List successfully created!"); ?></span>
+		</div>
+
+		<a target="_blank" href="https://twitter.com/<?php echo $username; ?>/lists/<?php echo $slug; ?>" class="btn btn-main"><?php echo __("Go to My Timeline!"); ?></a>
+
+		<div class="disclaimer">
+			<?php echo __("Tip: add the list as a bookmark for a single click easy access!"); ?>
+		</div>
+
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -20,6 +44,7 @@
 
 		var added = Cookies.get('added');
 		if (added) {
+			document.getElementById('success-mobile').style.visibility = "hidden";
 			window.location.href = urlTwitterApp;
 			setInterval(function() {
 				window.location.href = urlTwitterApp;
@@ -27,6 +52,7 @@
 		}
 
 		function addCookie() {
+			console.log('addCookie');
 			var added = Cookies.set('added', true);
 			window.location.href = urlTwitterApp;
 		}

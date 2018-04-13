@@ -7,10 +7,14 @@ TODO
 * ~Create logo~
 * ~Create connection with backend / Create list process~
 * ~Create Twitter app~
-* Add Analytics (also events)
-* Possible A/B tests?
-* Change Twitter profile based on user's settings
-* Add translations to Spanish
+* ~Add Analytics (also events)~
+* ~Possible A/B tests? NO~
+* ~Change Twitter profile based on user's settings~
+* ~Add translations to Spanish~
+* ~Fix error username empty~
+* Fix view list not redirecting
+* Frontend view list page
+* Possible help popup?
 
 
 TODO MARKETING

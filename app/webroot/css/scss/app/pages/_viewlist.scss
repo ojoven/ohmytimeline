@@ -12,12 +12,37 @@
 		color: #444;
 	}
 
+	.header {
+
+		> * { color: #444; }
+
+		// Messages
+		.success {
+			@include animation(3s, .5s, fadeOut, 1);
+			display: block;
+			background: #78AB46;
+			padding: 14px;
+			color: #fff;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.supra-title {
+			display: block;
+			margin: 10px auto;
+			color: #999;
+			font-size: 14px;
+		}
+
+	}
+
 	.disclaimer {
 		font-size: 12px;
 	}
 
 	.title {
-		font-weight: bold;
 		margin-bottom: 5px;
 	}
 
@@ -31,5 +56,15 @@
 // ==============================================
 
 @include mobile {
+
+	.view-list-page {
+
+		.header {
+			.supra-title {
+				margin-top: 30px;
+			}
+		}
+
+	}
 
 }

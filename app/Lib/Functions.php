@@ -286,6 +286,18 @@ class Functions {
 
 	}
 
+	public static function getCurrentLanguage() {
+
+		$lang3Digit = CakeSession::read('Config.language');
+		switch ($lang3Digit) {
+			case 'spa':
+				return 'es';
+			case 'eng':
+			default:
+				return 'en';
+		}
+	}
+
 	/** VERSIONING / CACHE CLEAR **/
 	public static function majestic_get_current_version($type) {
 

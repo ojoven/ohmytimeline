@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Oh My Timeline\n"
-"POT-Creation-Date: 2018-04-12 12:11+0100\n"
-"PO-Revision-Date: 2018-04-12 12:29+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-04-13 19:51+0100\n"
+"PO-Revision-Date: 2018-04-13 19:57+0100\n"
+"Last-Translator: Mikel <michel@majesticmedia.ca>\n"
 "Language-Team:  <mikeltorresmail@gmail.com>\n"
 "Language: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -72,11 +72,11 @@ msgstr "Hubo un problema al conectarse a Twitter"
 msgid "Verifying credentials..."
 msgstr "Verificando credenciales..."
 
-#: ../app/View/Layouts/default.ctp:7
+#: ../app/View/Layouts/default.ctp:12
 msgid "Oh My Timeline! | Bring back your Twitter TL"
 msgstr "Oh My Timeline! | Tu TL de Twitter ha vuelto."
 
-#: ../app/View/Layouts/default.ctp:8
+#: ../app/View/Layouts/default.ctp:13
 msgid ""
 "No ads, no faved tweets from people you follow, no suggestions. Your "
 "Timeline, clean and sorted."
@@ -95,26 +95,6 @@ msgid ""
 msgstr ""
 "Hecho con ❤ por <a target='_blank' href='https://twitter.com/"
 "ojoven'>@ojoven</a>"
-
-#: ../app/View/Index/viewlist.ctp:3
-msgid ""
-"Add this page to your home screen and you'll be in your OMT timeline list in "
-"a single click."
-msgstr ""
-"Añade esta página a tu pantalla de inicio y accederás a tu timeline OMT! en "
-"un único click."
-
-#: ../app/View/Index/viewlist.ctp:5
-msgid "Go to My Timeline!"
-msgstr "¡Ir a mi timeline!"
-
-#: ../app/View/Index/viewlist.ctp:8
-msgid ""
-"If you're in the desktop or prefer to link to the list via browser URL you "
-"can go to the list through:"
-msgstr ""
-"Si estás en escritorio o prefieres un enlace via URL de navegador, puedes "
-"acceder a la lista desde:"
 
 #: ../app/View/Index/index.ctp:5
 msgid "Bring back your <br class='just-mobile'>Twitter Timeline."
@@ -146,23 +126,30 @@ msgstr "Sin secciones tipo \"por si te perdiste\""
 msgid "Only the tweets you ❤ sorted in real time"
 msgstr "Sólo los tuits que tú ❤ ordenados en tiempo real"
 
-#: ../app/View/Index/index.ctp:47 ../app/View/Index/index.ctp:72
+#: ../app/View/Index/index.ctp:30
+msgid ""
+"Specially recommended if you use<br>the official Twitter client for Android "
+"and iOS"
+msgstr ""
+"Hecho en especial para ti si usas la app oficial de Twitter en Android o iOS"
+
+#: ../app/View/Index/index.ctp:48 ../app/View/Index/index.ctp:73
 msgid "Bring back my Twitter TL!"
 msgstr "¡Quiero mi TL de vuelta!"
 
-#: ../app/View/Index/index.ctp:67
+#: ../app/View/Index/index.ctp:68
 msgid "See my timeline!"
 msgstr "Ver mi Timeline"
 
-#: ../app/View/Index/index.ctp:86
+#: ../app/View/Index/index.ctp:87
 msgid "*You'll be redirected to sign in with Twitter<br>"
 msgstr "*Tendrás que loguearte con Twitter<br> "
 
-#: ../app/View/Index/index.ctp:87
+#: ../app/View/Index/index.ctp:88
 msgid "[No automatic tweets nor spam, just one thing*]"
 msgstr "[Sin tuits automáticos o spam, sólo una cosa, si quieres*]"
 
-#: ../app/View/Index/index.ctp:104
+#: ../app/View/Index/index.ctp:105
 msgid ""
 "Hey, this is my side project<br> and I'm <a target='_blank' href='https://"
 "twitter.com/lindydeveloper'>@lindydeveloper</a>"
@@ -170,11 +157,11 @@ msgstr ""
 "Hey, este es un proyecto personal<br> y yo soy <a target='_blank' "
 "href='https://twitter.com/ojoven'>@ojoven</a>"
 
-#: ../app/View/Index/index.ctp:108
+#: ../app/View/Index/index.ctp:109
 msgid "*Follow me on Twitter"
 msgstr "*Sígueme en Twitter"
 
-#: ../app/View/Index/index.ctp:109
+#: ../app/View/Index/index.ctp:110
 msgid ""
 "For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and "
 "<span class='highlighted'>to let me know<br> how Oh My Timeline! works for "
@@ -184,9 +171,46 @@ msgstr ""
 "<span class='highlighted'>para hacerme saber<br> qué tal te funciona Oh My "
 "Timeline!</span>"
 
-#: ../app/View/Index/index.ctp:122
+#: ../app/View/Index/index.ctp:123
 msgid "timelines brought back!"
 msgstr "timelines traídos de vuelta!"
+
+#: ../app/View/Index/viewlist.ctp:7 ../app/View/Index/viewlist.ctp:28
+msgid "List successfully created!"
+msgstr "¡La lista con tu timeline ya está lista! xd"
+
+#: ../app/View/Index/viewlist.ctp:8
+msgid "But wait cause there's more..."
+msgstr "Pero espera que hay más..."
+
+#: ../app/View/Index/viewlist.ctp:9
+msgid ""
+"Pro Tip: Add this page to your home screen and you'll be in your OMT "
+"timeline list in a single click."
+msgstr ""
+"Super Truqui: Añade esta página a la pantalla de inicio de tu móvil y "
+"accederás a tu timeline OMT! en un único click."
+
+#: ../app/View/Index/viewlist.ctp:12 ../app/View/Index/viewlist.ctp:31
+msgid "Go to My Timeline!"
+msgstr "¡Ir a mi timeline!"
+
+#: ../app/View/Index/viewlist.ctp:15
+msgid "If you'd like to access via browser, instead of Twitter app:"
+msgstr "Si prefieres ir a la URL, en lugar de usar la app de Twitter:"
+
+#: ../app/View/Index/viewlist.ctp:34
+msgid "Tip: add the list as a bookmark for a single click easy access!"
+msgstr ""
+"Truqui: añade la lista como marcador en tu navegador para un acceso "
+"instantáneo."
+
+#~ msgid ""
+#~ "If you're in the desktop or prefer to link to the list via browser URL "
+#~ "you can go to the list through:"
+#~ msgstr ""
+#~ "Si estás en escritorio o prefieres un enlace via URL de navegador, puedes "
+#~ "acceder a la lista desde:"
 
 #~ msgid "Browse your Twitter Timeline with..."
 #~ msgstr "Navega por tu Timeline de Twitter..."
