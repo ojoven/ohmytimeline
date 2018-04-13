@@ -1,7 +1,6 @@
 <?php if (Configure::read('Export')): ?>
 <script>
 	var _Server = <?=json_encode(Configure::read('Export'))?>;
-	console.log(_Server);
 </script>
 <?php endif; ?>
 <script>

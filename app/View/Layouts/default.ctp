@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+	<!-- Google Aalytics -->
+	<?php echo $this->element('analytics_script'); ?>
+
+	<!-- Le meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<?php $title = __("Oh My Timeline! | Bring back your Twitter TL");
 	$description = __("No ads, no faved tweets from people you follow, no suggestions. Your Timeline, clean and sorted."); ?>
 	<title><?php echo $title; ?></title>
-
-	<!-- Le meta -->
 	<meta name="description" content="<?php echo $description; ?>">
 	<meta property="og:title" content="<?php echo $title; ?>"/>
 	<meta property="og:description" content="<?php echo $description; ?>" />
@@ -24,7 +27,7 @@
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Titillium+Web" rel="stylesheet">
 
-	<!-- Le icons -->
+	<!-- Les icons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -49,41 +52,38 @@
 
 <body>
 
-<!-- GOOGLE ANALYTICS -->
-<?php echo $this->element('analytics_script'); ?>
+	<!-- HEADER -->
+	<header id="main-header">
 
-<!-- HEADER -->
-<header id="main-header">
-
-	<?php if (isset($authenticated) && $authenticated) {?>
-		<div class="container">
-			<div class="menu">
-				<a href="<?php echo Router::url("/api/logout")?>" id="logout" class="menu-option">
-					<span><i class="fas fa-sign-out-alt"></i><?php echo __("Logout"); ?></span>
-				</a>
+		<?php if (isset($authenticated) && $authenticated) {?>
+			<div class="container">
+				<div class="menu">
+					<a href="<?php echo Router::url("/api/logout")?>" id="logout" class="menu-option">
+						<span><i class="fas fa-sign-out-alt"></i><?php echo __("Logout"); ?></span>
+					</a>
+				</div>
 			</div>
-		</div>
-	<?php }?>
+		<?php }?>
 
-	<h1>O<span class="disappear">h </span>M<span class="disappear">y </span>T<span class="disappear">imeline</span>!</h1>
+		<h1>O<span class="disappear">h </span>M<span class="disappear">y </span>T<span class="disappear">imeline</span>!</h1>
 
-</header>
+	</header>
 
-<!-- CONTENT -->
-<?php echo $this->fetch('content'); ?>
+	<!-- CONTENT -->
+	<?php echo $this->fetch('content'); ?>
 
-<!-- FOOTER -->
-<footer>
-	<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/lindydeveloper'>@lindydeveloper</a>"); ?></span>
-</footer>
+	<!-- FOOTER -->
+	<footer>
+		<span><?php echo __("Made with ❤ by <a target='_blank' href='https://twitter.com/lindydeveloper'>@lindydeveloper</a>"); ?></span>
+	</footer>
 
-<!-- JS -->
-<script type="text/javascript">
-	urlBase = "<?php echo Router::url("/");?>";
-	authenticated = <?php echo (isset($authenticated) && $authenticated) ? "true" : "false"; ?>;
-</script>
+	<!-- JS -->
+	<script type="text/javascript">
+		urlBase = "<?php echo Router::url("/");?>";
+		authenticated = <?php echo (isset($authenticated) && $authenticated) ? "true" : "false"; ?>;
+	</script>
 
-<script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
+	<script src="<?php echo Router::url("/js/app.min.js?v=" . Functions::majestic_get_current_version('js')); ?>"></script>
 
 </body>
 </html>
