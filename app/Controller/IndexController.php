@@ -193,8 +193,15 @@ class IndexController extends AppController {
 
 	}
 
-	public function checklistusers() {
-		$this->TwitterList->checkListUsers();
+	public function updateListUsers() {
+
+		$data['success'] = false;
+		if (isset($_GET['key']) && $_GET['key'] !== Configure::read('Twitter.consumerKey')) {
+			$data['success'] = true;
+			$this->TwitterList->updateListUsers();
+		}
+
+		$this->setAjaxResponse($data);
 	}
 
 	// AUXILIAR

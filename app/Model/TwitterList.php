@@ -281,18 +281,28 @@ class TwitterList extends AppModel {
 	}
 
 	/** PLAYGROUND **/
-	public function checkListUsers() {
+	public function updateListUsers() {
+
+		$this->User = ClassRegistry::init('User');
+		$users = $this->User->find('all');
+
+		foreach ($users as $user) {
+			$this->updateListUser($user['User']);
+		}
+
+	}
+
+	public function updateListUser($user) {
 
 		// We're using this user's list because of the high amount of following users she has
-		$username = 'lainde';
-		$slugList = 'whoinfluences-lainde';
+		$username = $user['username'];
+		$slugList = $user['omt_list_slug'];
+		$userId = $user['user_id'];
 
-		$userId = Configure::read('Twitter.defaultUserId');
-
-		$connection = $this->getConnection($userId, true);
+		$connection = $this->getConnection($userId, false);
 
 		// Get list members
-		$query = $connection->get('lists/members', array('slug' => $slugList, 'owner_screen_name' => 'ojoven', 'count' => 5000, 'include_entities' => false, 'skip_status' => true));
+		$query = $connection->get('lists/members', array('slug' => $slugList, 'owner_screen_name' => $username, 'count' => 5000, 'include_entities' => false, 'skip_status' => true));
 		$users = $query->users;
 		$memberIds = array();
 		foreach ($users as $user) {
@@ -305,18 +315,24 @@ class TwitterList extends AppModel {
 
 		// To be added
 		$toBeAdded = array_diff($followingIds, $memberIds);
-		$params['slug'] = $slugList;
-		$params['owner_screen_name'] = 'ojoven';
-		$params['user_id'] = implode(",", $toBeAdded);
-		$result = $connection->post('lists/members/create_all', $params);
+		if (!empty($toBeAdded)) {
+			$params['slug'] = $slugList;
+			$params['owner_screen_name'] = $username;
+			$params['user_id'] = implode(",", $toBeAdded);
+			$result = $connection->post('lists/members/create_all', $params);
+		}
 
 		// To be deleted
 		$toBeDeleted = array_diff($memberIds, $followingIds);
+		$userIdInt = (int) $userId;
+		if (isset($toBeDeleted[$userIdInt])) unset($toBeDeleted[$userIdInt]);
 
-		$params['slug'] = $slugList;
-		$params['owner_screen_name'] = 'ojoven';
-		$params['user_id'] = implode(",", $toBeDeleted);
-		$result = $connection->post('lists/members/destroy_all', $params);
+		if (!empty($toBeDeleted)) {
+			$params['slug'] = $slugList;
+			$params['owner_screen_name'] = $username;
+			$params['user_id'] = implode(",", $toBeDeleted);
+			$result = $connection->post('lists/members/destroy_all', $params);
+		}
 
 	}
 
