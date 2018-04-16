@@ -42,18 +42,19 @@
 
 		var urlTwitterApp = 'twitter://list?screen_name=<?php echo $username; ?>&slug=<?php echo $slug; ?>';
 
-		var added = Cookies.get('added');
+		var added = Cookies.get('from-home-screen');
 		if (added) {
 			document.getElementById('success-mobile').style.visibility = "hidden";
 			window.location.href = urlTwitterApp;
+			/**
 			setInterval(function() {
 				window.location.href = urlTwitterApp;
 			}, 1000);
+			**/
 		}
 
 		function addCookie() {
-			console.log('addCookie');
-			var added = Cookies.set('added', true);
+			var added = Cookies.set('from-home-screen', true, { expires: 14, path: '' });
 			window.location.href = urlTwitterApp;
 		}
 
