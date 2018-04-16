@@ -49,6 +49,18 @@
 	> span {
 		display: block;
 	}
+
+	.quick-tutorial {
+
+		img {
+			width: 100%;
+		}
+
+		.display-safari,
+		.display-chrome-ios {
+			display: none;
+		}
+	}
 }
 
 // ==============================================

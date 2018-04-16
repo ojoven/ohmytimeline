@@ -9,6 +9,7 @@ var $progressMessage = $("#progress-message"),
 $(function() {
 	sendForm();
 	updateAvatarOnCheckbox();
+	updateQuickTutorialDependingOnDevice();
 });
 
 // AVATAR
@@ -97,4 +98,13 @@ function finishCreateList(type, data) {
 
 	}
 
+}
+
+function updateQuickTutorialDependingOnDevice() {
+
+	var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+	if (is_safari) {
+		$(".display-chrome").hide();
+		$(".display-safari").show();
+	}
 }

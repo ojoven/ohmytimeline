@@ -9,6 +9,19 @@
 			<p class="title"><?php echo __("Pro Tip: Add this page to your home screen and you'll be in your OMT timeline list in a single click."); ?></p>
 		</div>
 
+		<div class="quick-tutorial">
+
+			<img class="display-chrome" src="<?php echo Router::url("/img/howto-chrome.jpg"); ?>" alt="How to">
+			<img class="display-safari" src="<?php echo Router::url("/img/howto-safari.jpg"); ?>" alt="How to">
+			<div class="display-chrome-ios">
+
+				<?php echo __("Chrome on iOS is not allowed to add a page to Home Screen, you should open it with Safari and add the page to home screen from there."); ?>
+				<a href='javascript:location.href="googlechrome"+location.href.substring(4);'><?php echo __("Open in Safari"); ?></a>
+
+			</div>
+
+		</div>
+
 		<a href="#" class="btn btn-main" id="to-add-cookie" onclick="addCookie();"><?php echo __("Go to My Timeline!"); ?></a>
 
 		<div class="disclaimer">
