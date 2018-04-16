@@ -16,7 +16,7 @@
 			<div class="display-chrome-ios">
 
 				<?php echo __("Chrome on iOS is not allowed to add a page to Home Screen, you should open it with Safari and add the page to home screen from there."); ?>
-				<a href='javascript:location.href="googlechrome"+location.href.substring(4);'><?php echo __("Open in Safari"); ?></a>
+				<!--<a href='javascript:location.href="googlechrome"+location.href.substring(4);'><?php echo __("Open in Safari"); ?></a>-->
 
 			</div>
 

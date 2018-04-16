@@ -107,4 +107,10 @@ function updateQuickTutorialDependingOnDevice() {
 		$(".display-chrome").hide();
 		$(".display-safari").show();
 	}
+
+	if (navigator.userAgent.match('CriOS')) {
+		$(".display-safari").hide();
+		$(".display-chrome").hide();
+		$(".display-chrome-ios").show();
+	}
 }

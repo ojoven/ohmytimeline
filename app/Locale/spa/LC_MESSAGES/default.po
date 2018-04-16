@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Oh My Timeline\n"
-"POT-Creation-Date: 2018-04-13 19:51+0100\n"
-"PO-Revision-Date: 2018-04-13 19:57+0100\n"
+"POT-Creation-Date: 2018-04-16 19:32+0100\n"
+"PO-Revision-Date: 2018-04-16 19:33+0100\n"
 "Last-Translator: Mikel <michel@majesticmedia.ca>\n"
 "Language-Team:  <mikeltorresmail@gmail.com>\n"
 "Language: Spanish\n"
@@ -175,7 +175,7 @@ msgstr ""
 msgid "timelines brought back!"
 msgstr "timelines traídos de vuelta!"
 
-#: ../app/View/Index/viewlist.ctp:7 ../app/View/Index/viewlist.ctp:28
+#: ../app/View/Index/viewlist.ctp:7 ../app/View/Index/viewlist.ctp:41
 msgid "List successfully created!"
 msgstr "¡La lista con tu timeline ya está lista! xd"
 
@@ -191,15 +191,27 @@ msgstr ""
 "Super Truqui: Añade esta página a la pantalla de inicio de tu móvil y "
 "accederás a tu timeline OMT! en un único click."
 
-#: ../app/View/Index/viewlist.ctp:12 ../app/View/Index/viewlist.ctp:31
+#: ../app/View/Index/viewlist.ctp:18
+msgid ""
+"Chrome on iOS is not allowed to add a page to Home Screen, you should open "
+"it with Safari and add the page to home screen from there."
+msgstr ""
+"Chrome en iOS no permite añadir una página a Inicio. Deberías abrir esta "
+"página con Safari y añadir a tu página de inicio desde allí."
+
+#: ../app/View/Index/viewlist.ctp:19
+msgid "Open in Safari"
+msgstr "Abrir en Safari"
+
+#: ../app/View/Index/viewlist.ctp:25 ../app/View/Index/viewlist.ctp:44
 msgid "Go to My Timeline!"
 msgstr "¡Ir a mi timeline!"
 
-#: ../app/View/Index/viewlist.ctp:15
+#: ../app/View/Index/viewlist.ctp:28
 msgid "If you'd like to access via browser, instead of Twitter app:"
 msgstr "Si prefieres ir a la URL, en lugar de usar la app de Twitter:"
 
-#: ../app/View/Index/viewlist.ctp:34
+#: ../app/View/Index/viewlist.ctp:47
 msgid "Tip: add the list as a bookmark for a single click easy access!"
 msgstr ""
 "Truqui: añade la lista como marcador en tu navegador para un acceso "
