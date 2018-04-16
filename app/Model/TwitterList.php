@@ -47,7 +47,7 @@ class TwitterList extends AppModel {
 			$list = $this->createListOnTwitter($connection);
 
 			// Let's save the list on DB
-			$this->saveListOnDB($user, $list);
+			$this->saveListOnDB($userId, $list);
 
 			// Let's add the users to the list
 			$this->addUsersToListOnTwitter($connection, $list, $followingIds);
@@ -126,7 +126,7 @@ class TwitterList extends AppModel {
 
 	private function createListOnTwitter($connection) {
 
-		$publicList = false;
+		$publicList = true;
 
 		$params['name'] = __("Oh My Timeline!");
 		$params['description'] = "No ads, no algorithms, just my clean TL - Create yours at https://ohmytimeline.com";
@@ -150,19 +150,14 @@ class TwitterList extends AppModel {
 		}
 	}
 
-	private function saveListOnDB($user, $list) {
-
-		$this->User = ClassRegistry::init('User');
-		$userDB = $this->User->findByUserId($user->id);
+	private function saveListOnDB($userId, $list) {
 
 		$data = array(
 			'omt_list_id' => $list->id,
 			'omt_list_slug' => $list->slug,
 		);
 
-		$this->User->id = $userDB['User']['id'];
-		$this->User->save($data);
-
+		$this->updateUserData($userId, $data);
 	}
 
 	private function addUsersToListOnTwitter($connection, $list, $followingIds) {
@@ -265,7 +260,6 @@ class TwitterList extends AppModel {
 	private function setUpdateProgress($partial, $message, $type = "progress", $data = null) {
 		echo "update progress " . $partial;
 		echo "<script>update_progress(" . $partial . "," . $this->totalSteps . ",'" . $message . "','" . $type . "','" . json_encode($data) . "')</script>" .str_repeat(' ', 1000);
-		//echo "<script>console.log(1)</script>";
 		ob_flush();
 		flush();
 	}
@@ -294,15 +288,26 @@ class TwitterList extends AppModel {
 
 	public function updateListUser($user) {
 
-		// We're using this user's list because of the high amount of following users she has
+		$listId = $user['omt_list_id'];
+		if (!$listId) return;
+
 		$username = $user['username'];
-		$slugList = $user['omt_list_slug'];
 		$userId = $user['user_id'];
 
 		$connection = $this->getConnection($userId, false);
 
 		// Get list members
-		$query = $connection->get('lists/members', array('slug' => $slugList, 'owner_screen_name' => $username, 'count' => 5000, 'include_entities' => false, 'skip_status' => true));
+		$query = $connection->get('lists/members', array('list_id' => $listId, 'count' => 5000, 'include_entities' => false, 'skip_status' => true));
+		if (isset($query->errors)) {
+
+			$data = array(
+				'omt_list_id' => null,
+				'omt_list_slug' => null,
+			);
+			$this->updateUserData($userId, $data);
+			return;
+		}
+
 		$users = $query->users;
 		$memberIds = array();
 		foreach ($users as $user) {
@@ -316,7 +321,7 @@ class TwitterList extends AppModel {
 		// To be added
 		$toBeAdded = array_diff($followingIds, $memberIds);
 		if (!empty($toBeAdded)) {
-			$params['slug'] = $slugList;
+			$params['list_id'] = $listId;
 			$params['owner_screen_name'] = $username;
 			$params['user_id'] = implode(",", $toBeAdded);
 			$result = $connection->post('lists/members/create_all', $params);
@@ -328,12 +333,21 @@ class TwitterList extends AppModel {
 		if (isset($toBeDeleted[$userIdInt])) unset($toBeDeleted[$userIdInt]);
 
 		if (!empty($toBeDeleted)) {
-			$params['slug'] = $slugList;
+			$params['list_id'] = $listId;
 			$params['owner_screen_name'] = $username;
 			$params['user_id'] = implode(",", $toBeDeleted);
 			$result = $connection->post('lists/members/destroy_all', $params);
 		}
 
 	}
+
+	public function updateUserData($userId, $data) {
+
+		$this->User = ClassRegistry::init('User');
+		$userDB = $this->User->findByUserId($userId);
+		$this->User->id = $userDB['User']['id'];
+		$this->User->save($data);
+	}
+
 
 }
