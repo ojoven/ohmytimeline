@@ -276,13 +276,18 @@ class Functions {
 
 	public static function isSpanishTalkingCountry() {
 
-		$ip = self::getRealIP();
-		$country = self::getCountryByIP($ip);
-		$spanishCountries = array(
-			'es', 'mx', 'co', 'ar', 'pe', 've', 'cl', 'ec', 'gt', 'cu', 'bo', 'do', 'hn', 'py', 'sv', 'ni', 'cr', 'pr', 'pa', 'uy', 'gq'
-		);
+		$isSpanishCountry = CakeSession::read('isSpanishCountry');
+		if ($isSpanishCountry == null) {
 
-		return ($country && in_array($country, $spanishCountries));
+			$ip = self::getRealIP();
+			$country = self::getCountryByIP($ip);
+			$spanishCountries = array('es', 'mx', 'co', 'ar', 'pe', 've', 'cl', 'ec', 'gt', 'cu', 'bo', 'do', 'hn', 'py', 'sv', 'ni', 'cr', 'pr', 'pa', 'uy', 'gq');
+
+			$isSpanishCountry = $country && in_array($country, $spanishCountries);
+			CakeSession::write('isSpanishCountry', $isSpanishCountry);
+		}
+
+		return $isSpanishCountry;
 
 	}
 
