@@ -125,7 +125,7 @@
 				</div>
 
 				<div class="text">
-					<?php echo __("<div class='previous'>\"Ok, let me understand this. What this does is to simply create a list with the people I follow...\"</div>brilliant!"); ?>
+					<?php echo __("<div class='previous'>\"Ok, let me understand this. What this does is to simply create a list with the people I follow, my TL in an up to date list...\"</div>brilliant!"); ?>
 				</div>
 
 				<div class="from"><?php echo __("Guille, basque software developer"); ?></div>

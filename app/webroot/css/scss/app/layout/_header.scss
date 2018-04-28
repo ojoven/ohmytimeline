@@ -20,6 +20,7 @@
 		.disappear {
 			width: 0;
 		}
+
 	}
 
 }
@@ -29,6 +30,12 @@
 	width: 100%;
 	text-align: center;
 	padding-bottom: 70px;
+
+	// Birds
+	.birds {
+		position: absolute;
+		left: 0;
+	}
 
 	// Twitter birds
 	.twitter-bird {

@@ -65,7 +65,9 @@
 			</div>
 		<?php }?>
 
-		<h1>O<span class="disappear">h </span>M<span class="disappear">y </span>T<span class="disappear">imeline</span>!</h1>
+		<h1>
+			Oh My Timeline!
+		</h1>
 
 	</header>
 

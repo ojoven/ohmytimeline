@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Oh My Timeline\n"
-"POT-Creation-Date: 2018-04-28 17:20+0100\n"
-"PO-Revision-Date: 2018-04-28 17:20+0100\n"
+"POT-Creation-Date: 2018-04-28 18:04+0100\n"
+"PO-Revision-Date: 2018-04-28 18:05+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <mikeltorresmail@gmail.com>\n"
 "Language: Spanish\n"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Logout"
 msgstr "Salir"
 
-#: ../app/View/Layouts/default.ctp:77
+#: ../app/View/Layouts/default.ctp:79
 msgid ""
 "Made with ❤ by <a target='_blank' href='https://twitter.com/"
 "lindydeveloper'>@lindydeveloper</a>"
@@ -226,10 +226,12 @@ msgstr ""
 #: ../app/View/Index/index.ctp:128
 msgid ""
 "<div class='previous'>\"Ok, let me understand this. What this does is to "
-"simply create a list with the people I follow...\"</div>brilliant!"
+"simply create a list with the people I follow, my TL in an up to date list..."
+"\"</div>brilliant!"
 msgstr ""
 "<div class='previous'>\"A ver que yo me entere. Esta movida me crea una "
-"lista con la peña que sigo...\"</div>¡brillante!"
+"lista con la peña que sigo... un TL limpio y actualizado en formato de "
+"lista...\"</div>¡brillante!"
 
 #: ../app/View/Index/index.ctp:131
 msgid "Guille, basque software developer"
