@@ -27,7 +27,7 @@
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No faved tweets from people you follow"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("No \"you may have missed\" tweets"); ?></li>
 		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Only the tweets you ❤ sorted in real time"); ?></li>
-		<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Specially recommended if you use<br>the official Twitter client for Android and iOS"); ?></li>
+		<!--<li><span class="fa-li"><i class="fas fa-check"></i></span><?php echo __("Specially recommended if you use<br>the official Twitter client for Android and iOS"); ?></li>-->
 	</ul>
 
 </section>
@@ -90,6 +90,36 @@
 
 	</section>
 
+	<section class="howto">
+
+		<h2><?php echo __("Good! How does this work?"); ?></h2>
+
+		<p>Oh My Timeline! creates automatically <br><b>a list on your Twitter profile with the people you follow:</b></p>
+
+		<img src="<?php echo Router::url("/") ?>img/OMT-follow-to-list-members.jpg" alt="<?php echo __("People you follow -> List members"); ?>"/>
+
+		<p>And so, when browsing the list, <br><b>you'll browse a clean and sorted version of your timeline:</b></p>
+
+		<video controls autoplay loop>
+			<source src="<?php echo Router::url("/") ?>img/final.mp4" type="video/mp4">
+		</video>
+
+		<p class="little">Cause Twitter lists don't include ads, nor they use any algorithms.<br>Just the tweets from its members sorted in real time.</p>
+
+	</section>
+
+	<
+
+	<!-- NUMBER OF TIMELINES BROUGHT BACK -->
+	<section class="numbers">
+
+		<div class="main">
+			<span class="number">210</span>
+			<span class="message"><?php echo __("timelines brought back!"); ?></span>
+		</div>
+
+	</section>
+
 	<!-- ADDITIONAL INFORMATION -->
 	<section class="author">
 
@@ -114,17 +144,6 @@
 		</div>
 
 	</section>
-
-	<!-- NUMBER OF TIMELINES BROUGHT BACK
-	<section class="numbers">
-
-		<div class="main">
-			<span class="number">210</span>
-			<span class="message"><?php echo __("timelines brought back!"); ?></span>
-		</div>
-
-	</section>
- 	-->
 
 </main>
 

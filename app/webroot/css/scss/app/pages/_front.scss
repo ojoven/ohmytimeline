@@ -83,7 +83,7 @@
 .author {
 
 	color: #444;
-	margin: 140px 0 100px;
+	margin: 40px 0 50px;
 
 	// Avatar
 	.avatar-container {
@@ -143,6 +143,38 @@
 
 }
 
+.howto {
+
+	margin-top: 130px;
+
+	h2, h3 {
+		color: $queenBlue;
+	}
+
+	p {
+		color: #444;
+		font-size: 16px;
+		width: 435px;
+		max-width: 90%;
+		margin: 20px auto;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	video {
+		width: 320px;
+		max-width: 100%;
+	}
+
+	.little {
+		font-size: 12px;
+		margin-top: 20px;
+	}
+
+}
+
 // NUMBERS
 .numbers {
 
@@ -182,7 +214,7 @@
 	// INFORMATION
 	.author {
 		display: block;
-		margin: 100px 0 50px;
+		margin: 40px 0 50px;
 	}
 
 }
