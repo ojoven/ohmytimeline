@@ -6,6 +6,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'js/src/vendor/jquery-3.2.1.min.js',
+                    'js/src/vendor/owl.carousel.min.js',
                     'js/src/app/**/*.js'
                 ],
 

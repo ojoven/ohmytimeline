@@ -14,6 +14,9 @@
 @import "app/base/base";
 @import "app/base/component-mixins";
 
+/** VENDOR **/
+@import "vendor/owl.carousel";
+
 /** LAYOUT **/
 @import "app/layout/container";
 @import "app/layout/footer";

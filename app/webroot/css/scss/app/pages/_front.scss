@@ -175,6 +175,48 @@
 
 }
 
+// REVIEWS
+.reviews {
+
+	padding: 50px;
+	background: $greySeparator;
+	color: #444;
+
+	.review {
+		@extend .special;
+		display: block;
+		text-align: center;
+		margin: 10px;
+
+		.text {
+			font-size: 80px;
+			margin: 20px 0 10px;
+
+			.previous {
+				font-size: 13px;
+				width: 260px;
+				max-width: 90%;
+				margin: 0 auto 10px;
+			}
+
+		}
+
+		.stars {
+			color: #FF7F00;
+		}
+
+		.from {
+			font-style: italic;
+
+			.semi-hide {
+				display: block;
+				color: #999;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
 // NUMBERS
 .numbers {
 

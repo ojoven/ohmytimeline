@@ -108,9 +108,77 @@
 
 	</section>
 
-	<
 
-	<!-- NUMBER OF TIMELINES BROUGHT BACK -->
+	<section class="reviews">
+
+		<div class="reviews-carousel owl-carousel owl-theme">
+
+			<!-- REVIEW -->
+			<div class="review">
+
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+
+				<div class="text">
+					<div class="previous">"Ok, let me understand this. What this does is to simply create a list with the people I follow...</div>
+					brilliant!"
+				</div>
+
+				<div class="from">Guille, basque software developer</div>
+
+			</div>
+
+			<!-- REVIEW -->
+			<div class="review">
+
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+
+				<div class="text">
+					<div class="previous">"I've been testing Oh My Timeline for a few days and I just can say it's amazing! Go checkout and enjoy your TL with</div>
+					no ads!"
+				</div>
+
+				<div class="from">Iñi, basque software developer</div>
+
+			</div>
+
+			<!-- REVIEW -->
+			<div class="review">
+
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+				</div>
+
+				<div class="text">
+
+					<div class="previous">"Ok, if you start using this massively I'll need to put ads and algorithms on Twitter lists, too!</div>
+					¯\_(ツ)_/¯
+				</div>
+
+				<div class="from">Jack from Twitter <span class="semi-hide">(not real, of course)</span></div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<!-- NUMBER OF TIMELINES BROUGHT BACK
 	<section class="numbers">
 
 		<div class="main">
@@ -118,7 +186,7 @@
 			<span class="message"><?php echo __("timelines brought back!"); ?></span>
 		</div>
 
-	</section>
+	</section> -->
 
 	<!-- ADDITIONAL INFORMATION -->
 	<section class="author">
@@ -137,7 +205,7 @@
 				<h4>
 					<input id="follow" name="follow" type="checkbox" checked />
 					<label for="follow"><?php echo __("*Follow me on Twitter"); ?></label>
-					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and <span class='highlighted'>to let me know<br> how Oh My Timeline! works for you!</span>"); ?></p>
+					<p><?php echo __("For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and to let me know<br> how Oh My Timeline! works for you!"); ?></p>
 				</h4>
 			</div>
 
