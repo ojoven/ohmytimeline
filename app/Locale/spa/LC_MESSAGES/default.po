@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Oh My Timeline\n"
-"POT-Creation-Date: 2018-04-16 19:32+0100\n"
-"PO-Revision-Date: 2018-04-16 19:33+0100\n"
-"Last-Translator: Mikel <michel@majesticmedia.ca>\n"
+"POT-Creation-Date: 2018-04-28 17:20+0100\n"
+"PO-Revision-Date: 2018-04-28 17:20+0100\n"
+"Last-Translator: \n"
 "Language-Team:  <mikeltorresmail@gmail.com>\n"
 "Language: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -56,19 +56,19 @@ msgstr ". Por favor, espera unos minutos."
 msgid "There was a problem creating the list: "
 msgstr "Hubo un problema creando la lista:"
 
-#: ../app/Model/TwitterList.php:180
+#: ../app/Model/TwitterList.php:175
 msgid "Adding users to list...(please wait)"
 msgstr "Añadiendo usuarios a la lista..."
 
-#: ../app/Model/TwitterList.php:197
+#: ../app/Model/TwitterList.php:192
 msgid "Connecting to Twitter..."
 msgstr "Conectando a Twitter..."
 
-#: ../app/Model/TwitterList.php:220
+#: ../app/Model/TwitterList.php:215
 msgid "There was a problem connecting to Twitter."
 msgstr "Hubo un problema al conectarse a Twitter"
 
-#: ../app/Model/TwitterList.php:235
+#: ../app/Model/TwitterList.php:230
 msgid "Verifying credentials..."
 msgstr "Verificando credenciales..."
 
@@ -95,85 +95,6 @@ msgid ""
 msgstr ""
 "Hecho con ❤ por <a target='_blank' href='https://twitter.com/"
 "ojoven'>@ojoven</a>"
-
-#: ../app/View/Index/index.ctp:5
-msgid "Bring back your <br class='just-mobile'>Twitter Timeline."
-msgstr "Tu TL de Twitter <br class='just-mobile'>sin anuncios ni morralla."
-
-#: ../app/View/Index/index.ctp:11
-msgid ""
-"Oh My Timeline! is a simple app that creates a Twitter list with the people "
-"you follow and keeps it synchronized. Browsing it is like browsing your "
-"timeline with..."
-msgstr ""
-"Oh My Timeline! es una app sencilla que crea una lista de Twitter y la "
-"actualiza con las personas a las que sigues. Navegar por la lista es como "
-"navegar en tu timeline..."
-
-#: ../app/View/Index/index.ctp:26
-msgid "No ads"
-msgstr "Sin anuncios"
-
-#: ../app/View/Index/index.ctp:27
-msgid "No faved tweets from people you follow"
-msgstr "Sin favs de gente a la que sigues"
-
-#: ../app/View/Index/index.ctp:28
-msgid "No \"you may have missed\" tweets"
-msgstr "Sin secciones tipo \"por si te perdiste\""
-
-#: ../app/View/Index/index.ctp:29
-msgid "Only the tweets you ❤ sorted in real time"
-msgstr "Sólo los tuits que tú ❤ ordenados en tiempo real"
-
-#: ../app/View/Index/index.ctp:30
-msgid ""
-"Specially recommended if you use<br>the official Twitter client for Android "
-"and iOS"
-msgstr ""
-"Hecho en especial para ti si usas la app oficial de Twitter en Android o iOS"
-
-#: ../app/View/Index/index.ctp:48 ../app/View/Index/index.ctp:73
-msgid "Bring back my Twitter TL!"
-msgstr "¡Quiero mi TL de vuelta!"
-
-#: ../app/View/Index/index.ctp:68
-msgid "See my timeline!"
-msgstr "Ver mi Timeline"
-
-#: ../app/View/Index/index.ctp:87
-msgid "*You'll be redirected to sign in with Twitter<br>"
-msgstr "*Tendrás que loguearte con Twitter<br> "
-
-#: ../app/View/Index/index.ctp:88
-msgid "[No automatic tweets nor spam, just one thing*]"
-msgstr "[Sin tuits automáticos o spam, sólo una cosa, si quieres*]"
-
-#: ../app/View/Index/index.ctp:105
-msgid ""
-"Hey, this is my side project<br> and I'm <a target='_blank' href='https://"
-"twitter.com/lindydeveloper'>@lindydeveloper</a>"
-msgstr ""
-"Hey, este es un proyecto personal<br> y yo soy <a target='_blank' "
-"href='https://twitter.com/ojoven'>@ojoven</a>"
-
-#: ../app/View/Index/index.ctp:109
-msgid "*Follow me on Twitter"
-msgstr "*Sígueme en Twitter"
-
-#: ../app/View/Index/index.ctp:110
-msgid ""
-"For delicious tweets about side projects,<br>creativeness, UX, MEMEs...and "
-"<span class='highlighted'>to let me know<br> how Oh My Timeline! works for "
-"you!</span>"
-msgstr ""
-"Para tuits deliciosos sobre side projects,<br>creatividad, UX, MEMEs...y "
-"<span class='highlighted'>para hacerme saber<br> qué tal te funciona Oh My "
-"Timeline!</span>"
-
-#: ../app/View/Index/index.ctp:123
-msgid "timelines brought back!"
-msgstr "timelines traídos de vuelta!"
 
 #: ../app/View/Index/viewlist.ctp:7 ../app/View/Index/viewlist.ctp:41
 msgid "List successfully created!"
@@ -216,6 +137,157 @@ msgid "Tip: add the list as a bookmark for a single click easy access!"
 msgstr ""
 "Truqui: añade la lista como marcador en tu navegador para un acceso "
 "instantáneo."
+
+#: ../app/View/Index/index.ctp:5
+msgid "Bring back your <br class='just-mobile'>Twitter Timeline."
+msgstr "Tu TL de Twitter <br class='just-mobile'>sin anuncios ni morralla."
+
+#: ../app/View/Index/index.ctp:11
+msgid ""
+"Oh My Timeline! is a simple app that creates a Twitter list with the people "
+"you follow and keeps it synchronized. Browsing it is like browsing your "
+"timeline with..."
+msgstr ""
+"Oh My Timeline! es una app sencilla que crea una lista de Twitter y la "
+"actualiza con las personas a las que sigues. Navegar por la lista es como "
+"navegar en tu timeline..."
+
+#: ../app/View/Index/index.ctp:26
+msgid "No ads"
+msgstr "Sin anuncios"
+
+#: ../app/View/Index/index.ctp:27
+msgid "No faved tweets from people you follow"
+msgstr "Sin favs de gente a la que sigues"
+
+#: ../app/View/Index/index.ctp:28
+msgid "No \"you may have missed\" tweets"
+msgstr "Sin secciones tipo \"por si te perdiste\""
+
+#: ../app/View/Index/index.ctp:29
+msgid "Only the tweets you ❤ sorted in real time"
+msgstr "Sólo los tuits que te molan ordenados en tiempo real"
+
+#: ../app/View/Index/index.ctp:30
+msgid ""
+"Specially recommended if you use<br>the official Twitter client for Android "
+"and iOS"
+msgstr ""
+"Hecho en especial para ti si usas la app oficial de Twitter en Android o iOS"
+
+#: ../app/View/Index/index.ctp:48 ../app/View/Index/index.ctp:73
+msgid "Bring back my Twitter TL!"
+msgstr "¡Quiero mi TL de vuelta!"
+
+#: ../app/View/Index/index.ctp:68
+msgid "See my timeline!"
+msgstr "Ver mi Timeline"
+
+#: ../app/View/Index/index.ctp:87
+msgid "*You'll be redirected to sign in with Twitter<br>"
+msgstr "*Tendrás que loguearte con Twitter<br> "
+
+#: ../app/View/Index/index.ctp:88
+msgid "[No automatic tweets nor spam, just one thing*]"
+msgstr "[Sin tuits automáticos o spam, sólo una cosa, si quieres*]"
+
+#: ../app/View/Index/index.ctp:95
+msgid "Good! How does this work?"
+msgstr "Vale, vale, ¿cómo funciona?"
+
+#: ../app/View/Index/index.ctp:97
+msgid ""
+"Let me tell you. Oh My Timeline! creates automatically <br><b>a list on your "
+"Twitter profile with the people you follow:</b>"
+msgstr ""
+"Te cuento. Oh My Timeline! crea automáticamente <br><b>una lista en tu "
+"perfil de Twitter con los usuarios a los que sigues:</b>"
+
+#: ../app/View/Index/index.ctp:99
+msgid "People you follow -> List members"
+msgstr "Gente que sigues -> Miembros de la lista"
+
+#: ../app/View/Index/index.ctp:101
+msgid ""
+"And so, when browsing the list, <br><b>you'll browse a clean and sorted "
+"version of your timeline:</b>"
+msgstr ""
+"Así, cuando navegas por la lista, <br><b>estarás navegando por una versión "
+"limpia y ordenada de tu TL:</b>"
+
+#: ../app/View/Index/index.ctp:107
+msgid ""
+"Cause Twitter lists don't include ads, nor they use any algorithms.<br>Just "
+"the tweets from its members sorted in real time."
+msgstr ""
+"Y es que las listas de Twitter no incluyen anuncios ni usan algoritmos."
+"<br>Sólo tuits de los miembros de la lista ordenados en tiempo real."
+
+#: ../app/View/Index/index.ctp:128
+msgid ""
+"<div class='previous'>\"Ok, let me understand this. What this does is to "
+"simply create a list with the people I follow...\"</div>brilliant!"
+msgstr ""
+"<div class='previous'>\"A ver que yo me entere. Esta movida me crea una "
+"lista con la peña que sigo...\"</div>¡brillante!"
+
+#: ../app/View/Index/index.ctp:131
+msgid "Guille, basque software developer"
+msgstr "Guille, desarrollador de software vasco"
+
+#: ../app/View/Index/index.ctp:147
+msgid ""
+"<div class='previous'>\"I've been testing Oh My Timeline for a few days and "
+"I just can say it's amazing! Go checkout and enjoy your TL with\"</div>no "
+"ads!"
+msgstr ""
+"<div class='previous'>\"He estado utilizando Oh My Timeline durante unos "
+"días y sólo puedo decir que es increíble. Adelante, pruébalo y disfruta de "
+"tu TL...\"</div>¡sin anuncios!"
+
+#: ../app/View/Index/index.ctp:150
+msgid "Iñi, basque software developer"
+msgstr "Iñi, desarrollador de software vasco"
+
+#: ../app/View/Index/index.ctp:167
+msgid ""
+"<div class='previous'>\"Ok, I won't use OMT! because I actually like "
+"Twitter's current timeline. In any case, I don't have any problem on it "
+"existing.\"</div>"
+msgstr ""
+"<div class='previous'>\"Mira, no voy a utilizar OMT! porque realmente a mí "
+"me mola el timeline de Twitter. Anyway, no tengo problema con su existencia."
+"\"</div>"
+
+#: ../app/View/Index/index.ctp:171
+msgid "Gonzalo, basque software developer"
+msgstr "Gonzalo, desarrollador de software vasco"
+
+#: ../app/View/Index/index.ctp:184
+msgid "timelines brought back!"
+msgstr "timelines traídos de vuelta!"
+
+#: ../app/View/Index/index.ctp:201
+msgid ""
+"Hey, this is my side project<br> and I'm <a target='_blank' href='https://"
+"twitter.com/lindydeveloper'>@lindydeveloper</a>"
+msgstr ""
+"Hey, este es un proyecto personal<br> y yo soy <a target='_blank' "
+"href='https://twitter.com/ojoven'>@ojoven</a>"
+
+#: ../app/View/Index/index.ctp:205
+msgid "*Follow me on Twitter"
+msgstr "*Sígueme en Twitter"
+
+#: ../app/View/Index/index.ctp:206
+msgid ""
+"For <span class='smaller'>s̶h̶i̶t̶t̶y̶</span> delicious tweets about side projects,"
+"<br>creativeness, UX, MEMEs...and to let me know<br> how Oh My Timeline! "
+"works for you!"
+msgstr ""
+"Para tuits <span class='smaller'>m̶i̶e̶r̶d̶e̶r̶</span> molones sobre side projects,"
+"<br>creatividad, UX, MEMEs...y para hacerme saber <br>qué tal te funciona Oh "
+"My Timeline!"
 
 #~ msgid ""
 #~ "If you're in the desktop or prefer to link to the list via browser URL "

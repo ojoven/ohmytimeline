@@ -135,9 +135,8 @@
 		line-height: 1.2;
 		color: #444;
 
-		.highlighted {
-			color: #666;
-			font-weight: bold;
+		.smaller {
+			font-size: 90%;
 		}
 	}
 
@@ -206,6 +205,7 @@
 		}
 
 		.from {
+			margin-top: 10px;
 			font-style: italic;
 
 			.semi-hide {
@@ -257,6 +257,28 @@
 	.author {
 		display: block;
 		margin: 40px 0 50px;
+	}
+
+	// HOWTO
+	.howto {
+		h2, h3 {
+			font-size: 26px;
+		}
+	}
+
+	// REVIEWS
+	.reviews {
+
+		.review {
+
+			.text {
+				font-size: 40px;
+			}
+
+			.from {
+				font-size: 12px;
+			}
+		}
 	}
 
 }
