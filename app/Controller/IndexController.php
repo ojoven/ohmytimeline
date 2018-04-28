@@ -193,7 +193,7 @@ class IndexController extends AppController {
 
 	}
 
-	public function updateListUsers() {
+	public function updatelistusers() {
 
 		$data['success'] = false;
 		if (isset($_GET['key']) && $_GET['key'] !== Configure::read('Twitter.consumerKey')) {
