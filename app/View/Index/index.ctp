@@ -45,6 +45,7 @@
 
 			<div class="to-send-form-container">
 
+				<!--
 				<a href="#" id="to-send-form" class="btn btn-main"><?php echo __("Bring back my Twitter TL!"); ?></a>
 
 				<form id="main-form" action="<?php echo Router::url("/api/createlist"); ?>" method="post" target="progress">
@@ -55,6 +56,10 @@
 					</div>
 
 				</form>
+
+				-->
+
+				<div style="margin:20px; font-weight: bold;">Sorry, there are issues with Twitter API now. Please check again in a few hours / days or contact @ojoven</div>
 			</div>
 
 			<iframe id="progress" name="progress"></iframe>
@@ -69,7 +74,7 @@
 
 		<?php } else { ?>
 
-			<!-- NO AUTHENTICATED -->
+			<!-- NO AUTHENTICATED
 			<a href="#" id="to-send-form" class="btn btn-main"><?php echo __("Bring back my Twitter TL!"); ?></a>
 
 			<form id="main-form" action="<?php echo Router::url("/api/authorize"); ?>" method="post">
@@ -80,6 +85,9 @@
 				</div>
 
 			</form>
+			 -->
+
+			<div style="margin:20px; font-weight: bold;">Sorry, there are issues with Twitter API now. Please check again in a few hours / days or contact @ojoven</div>
 		<?php }?>
 
 		<!-- DISCLAIMER -->
